@@ -2,6 +2,8 @@ public class Menu {
     private int pace = 0;
     private int ration = 0;
 
+    public Menu() {} // default
+
     /**
      * Load Main Menu
      * Sets the display for the main menu, does NOT receive inputs or give outputs.
@@ -10,23 +12,21 @@ public class Menu {
      *      3. See the Oregon Top Ten
      *      4. Choose Management Options
      *      5. End
-     * @return void
      */
 
-    public void loadMainMenu()
+    public static void loadMainMenu()
     {
-        System.out.println("░▀▀█▀▀░█░░░░█▀▀░░░▒█▀▀▀█░█▀▀▄░█▀▀░█▀▀▀░▄▀▀▄░█▀▀▄░░░▀▀█▀▀░█▀▀▄░█▀▀▄░░▀░░█░\n" 
-                         + "░░▒█░░░█▀▀█░█▀▀░░░▒█░░▒█░█▄▄▀░█▀▀░█░▀▄░█░░█░█░▒█░░░░▒█░░░█▄▄▀░█▄▄█░░█▀░█░\n" 
-                         + "░░▒█░░░▀░░▀░▀▀▀░░░▒█▄▄▄█░▀░▀▀░▀▀▀░▀▀▀▀░░▀▀░░▀░░▀░░░░▒█░░░▀░▀▀░▀░░▀░▀▀▀░▀▀\n");
+        System.out.println("░▀▀█▀▀░█░░░░█▀▀░░░▒█▀▀▀█░█▀▀▄░█▀▀░█▀▀▀░▄▀▀▄░█▀▀▄░░░▀▀█▀▀░█▀▀▄░█▀▀▄░▀█▀░█░░");
+        System.out.println("░░▒█░░░█▀▀█░█▀▀░░░▒█░░▒█░█▄▄▀░█▀▀░█░▀▄░█░░█░█░▒█░░░░▒█░░░█▄▄▀░█▄▄█░░█░░█░░");
+        System.out.println("░░▒█░░░▀░░▀░▀▀▀░░░▒█▄▄▄█░▀░▀▀░▀▀▀░▀▀▀▀░░▀▀░░▀░░▀░░░░▒█░░░▀░▀▀░▀░░▀░▀▀▀░▀▀▀");
     }
 
     /**
      * Learn about Trail
      * Displays the "Learn about the trail" text to inform the user about the trail.
-     * @return void
      */
 
-    public void learnAboutTrail()
+    public static void learnAboutTrail()
     {
 
     }
@@ -37,16 +37,15 @@ public class Menu {
      * Asks if we would like to see how points are earned.
      * Y - display how points are earned, then return to main menu
      * n - return to main menu
-     * @return void
      */
 
-    public void seeTopTen()
+    public static void seeTopTen()
     {
 
     }
 
     /**
-     * Choose Management Optons
+     * Choose Management Options
      * Displays the "Management Options" Menu:
      *      See Current Top Ten List
      *      See Original Top Ten List
@@ -54,9 +53,8 @@ public class Menu {
      *      Erase Tombstone Messages
      *      Toggle Pictures (Turns off the fun photos we added for each fort)
      *      Return to the Main Menu.
-     * @return void
      */
-    public void chooseManagementOptions()
+    public static void chooseManagementOptions()
     {
 
     }
@@ -67,9 +65,9 @@ public class Menu {
      * Asks user for the names of the 5 traveling members.
      * Display the names for the user
      * Asks the user if the names are correct.
-     * @return the names as an array.
+     * @return String[5] of the names as an array.
      */
-    public String[] setNames()
+    public  String[] setNames()
     {
         String[] name = new String[5];
         for (int i = 0; i < 5; i++)
@@ -93,17 +91,18 @@ public class Menu {
      *      7. September
      * Asks user to choose a month to depart.
      * Asks the user if they are sure.
-     * @return the date to date class.
+     * @return int[3] (the date: DAY, MONTH (int), YEAR)
      */
     public int[] startDate()
     {
         boolean validInput = false;
-        int input = UserInput;
+       // int input = UserInput;
         int[] date = new int[3];
 
         date[0] = 1;    //Set day
+        date[1] = 4;    //Set initial month in case of error
         date[2] = 1860; //Set Year
-        do {
+      /*  do {
             switch (input) {
                 case 1: {
                    date[1] = 3;
@@ -146,7 +145,7 @@ public class Menu {
                 }
                 break;
             }
-        }while (validInput = false); // Set Month
+        }while (validInput = false); // Set Month */
         return date;
     }
 
@@ -159,9 +158,8 @@ public class Menu {
      *      Display Spendable Cash
      *      Provide descriptions for items available in the shop
      *      Provide hints for the trail.
-     * @return void
      */
-    public void initialCash(int playerMoneyCount)
+    public static void initialCash(int playerMoneyCount)
     {
         System.out.println("[==========================================================]");
         System.out.println("You have" + playerMoneyCount + " dollars. Spend them wisely...");
@@ -177,16 +175,8 @@ public class Menu {
      * Getters and setters
      * @return int
      */
-    public int getPace() {
-        return pace;
-    }
-    public void setPace(int pace) {
-        this.pace = pace;
-    }
-    public int getRation() {
-        return ration;
-    }
-    public void setRation(int ration) {
-        this.ration = ration;
-    }
+    public int getPace() {return pace;}
+    public void setPace(int pace) {this.pace = pace;}
+    public int getRation() {return ration;}
+    public void setRation(int ration) {this.ration = ration;}
 }
