@@ -17,6 +17,25 @@ public class Inventory
 
     }
 
+    public void goToShop()
+    {
+        Shop goToTheShop = new Shop(playerMoneyCount);
+    }
+
+    public boolean isWagonUsable()
+    {
+        if (wagonWheelCount >= 4 && wagonAxleCount >= 1 && wagonTongueCount >= 1)
+        {
+            wagonUsable = true;
+        }
+        else
+        {
+            wagonUsable = false;
+        }
+
+        return wagonUsable;
+    }
+
     public int getPlayerMoneyCount()
     {
         return playerMoneyCount;
@@ -72,60 +91,49 @@ public class Inventory
         return wagonUsable;
     }
 
-    public int setPlayerMoneyCount(int playerMoneyCount)
+    public void setPlayerMoneyCount(int playerMoneyCount)
     {
-        this.playerMoneyCount = this.playerMoneyCount + playerMoneyCount;
+        this.playerMoneyCount = playerMoneyCount;
     }
 
-    public int setFoodCount(int foodCount)
+    public void setFoodCount(int foodCount)
     {
         this.foodCount = this.foodCount + foodCount;
     }
 
-    public int setClothingCount(int clothingCount)
+    public void setClothingCount(int clothingCount)
     {
         this.clothingCount = this.clothingCount + clothingCount;
     }
 
-    public int setBulletsCount(int bulletsCount)
+    public void setBulletsCount(int bulletsCount)
     {
         this.bulletsCount = this.bulletsCount + bulletsCount;
     }
 
-    public int setOxenCount(int oxenCount)
+    public void setOxenCount(int oxenCount)
     {
         this.oxenCount = this.oxenCount + oxenCount;
     }
 
-    public int setWagonWheelCount(int wagonWheelCount)
+    public void setWagonWheelCount(int wagonWheelCount)
     {
-        this.wagonWheelCount = this.wagonWheelCountwagonWheelCount;
+        this.wagonWheelCount = this.wagonWheelCount + wagonWheelCount;
     }
 
-    public int setWagonAxleCount(int wagonAxleCount)
+    public void setWagonAxleCount(int wagonAxleCount)
     {
         this.wagonAxleCount = this.wagonAxleCount + wagonAxleCount;
     }
 
-    public int setWagonTongueCount(int wagonTongueCount)
+    public void setWagonTongueCount(int wagonTongueCount)
     {
         this.wagonTongueCount = this.wagonTongueCount + wagonTongueCount;
     }
 
-    public int setMedicalSupplyCount(int medicalSupplyCount)
+    public void setMedicalSupplyCount(int medicalSupplyCount)
     {
         this.medicalSupplyCount = this.medicalSupplyCount + medicalSupplyCount;
     }
-
-    public int setFamilyPet(int familyPet)
-    {
-        this.familyPet = this.familyPet + familyPet;
-    }
-
-    public boolean setWagonUsable(boolean wagonUsable)
-    {
-        this.wagonUsable = wagonUsable;
-    }
-
 
 }
