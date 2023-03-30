@@ -13,6 +13,10 @@ public class Shop
     private int medicalSupplyPurchased = 0;
     private int moneyUsed = 0;
 
+    public Shop()
+    {
+
+    }
     public Shop(int playerMoneyCount)
     {
         this.playerMoneyCount = playerMoneyCount;
