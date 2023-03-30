@@ -1,8 +1,11 @@
 public class Menu {
-    private int pace = 0;
-    private int ration = 0;
+    private int pace;
+    private int ration;
 
-    public Menu() {} // default
+    public Menu() {
+        this.pace = 0;
+        this.ration = 0;
+    } // default
 
     /**
      * Load Main Menu
@@ -14,7 +17,7 @@ public class Menu {
      *      5. End
      */
 
-    public static void loadMainMenu()
+    public void loadMainMenu()
     {
         System.out.println("░▀▀█▀▀░█░░░░█▀▀░░░▒█▀▀▀█░█▀▀▄░█▀▀░█▀▀▀░▄▀▀▄░█▀▀▄░░░▀▀█▀▀░█▀▀▄░█▀▀▄░▀█▀░█░░");
         System.out.println("░░▒█░░░█▀▀█░█▀▀░░░▒█░░▒█░█▄▄▀░█▀▀░█░▀▄░█░░█░█░▒█░░░░▒█░░░█▄▄▀░█▄▄█░░█░░█░░");
@@ -26,7 +29,7 @@ public class Menu {
      * Displays the "Learn about the trail" text to inform the user about the trail.
      */
 
-    public static void learnAboutTrail()
+    public void learnAboutTrail()
     {
 
     }
@@ -39,7 +42,7 @@ public class Menu {
      * n - return to main menu
      */
 
-    public static void seeTopTen()
+    public void seeTopTen()
     {
 
     }
@@ -54,7 +57,7 @@ public class Menu {
      *      Toggle Pictures (Turns off the fun photos we added for each fort)
      *      Return to the Main Menu.
      */
-    public static void chooseManagementOptions()
+    public void chooseManagementOptions()
     {
 
     }
@@ -67,15 +70,15 @@ public class Menu {
      * Asks the user if the names are correct.
      * @return String[5] of the names as an array.
      */
-    public  String[] setNames()
+    public String[] setNames()
     {
         String[] name = new String[5];
         for (int i = 0; i < 5; i++)
         {
-         name[i] = "Player" + (i+1);
+            name[i] = "Player" + (i+1);
 
         }
-    return  name;
+        return  name;
     }
 
     /**
@@ -96,7 +99,7 @@ public class Menu {
     public int[] startDate()
     {
         boolean validInput = false;
-       // int input = UserInput;
+        // int input = UserInput;
         int[] date = new int[3];
 
         date[0] = 1;    //Set day
@@ -159,7 +162,7 @@ public class Menu {
      *      Provide descriptions for items available in the shop
      *      Provide hints for the trail.
      */
-    public static void initialCash(int playerMoneyCount)
+    public void initialCash(int playerMoneyCount)
     {
         System.out.println("[==========================================================]");
         System.out.println("You have" + playerMoneyCount + " dollars. Spend them wisely...");
