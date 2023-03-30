@@ -132,7 +132,7 @@ public class Shop
         {
             player.setPlayerMoneyCount(playerMoneyCount);
             System.out.println("You do not have enough money!");
-            System.out.println("Go out of my shop!!!");
+            System.out.println("Get out of my shop!!!");
         }
 
     }

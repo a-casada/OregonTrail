@@ -22,12 +22,12 @@ public class Party
         return difficulty;
     }
 
-    public void updateLife(boolean alive[])
+    public void setLife(boolean alive[])
     {
         isAlive = alive;
     }
 
-    public void updateHealth(int value[])
+    public void setHealth(int value[])
     {
         health = value;
     }

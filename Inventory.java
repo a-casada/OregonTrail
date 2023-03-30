@@ -9,7 +9,6 @@ public class Inventory
     private int wagonAxleCount = 1;
     private int wagonTongueCount = 1;
     private int medicalSupplyCount = 0;
-    private int familyPet = 1;
     private boolean wagonUsable = false;
 
     public Inventory()
@@ -79,11 +78,6 @@ public class Inventory
     public int getMedicalSupplyCount()
     {
         return medicalSupplyCount;
-    }
-
-    public int getFamilyPet()
-    {
-        return familyPet;
     }
 
     public boolean getWagonUsableStatus()
