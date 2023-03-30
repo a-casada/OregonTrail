@@ -13,16 +13,29 @@ public class Shop
     private int medicalSupplyPurchased = 0;
     private int moneyUsed = 0;
 
+    /**
+     * Default constructor for the Shop class.
+     */
     public Shop()
     {
 
     }
+
+    /**
+     * This constructor sets the player's amount of money.
+     *
+     * @param playerMoneyCount
+     */
     public Shop(int playerMoneyCount)
     {
         this.playerMoneyCount = playerMoneyCount;
         buyItems();
     }
 
+    /**
+     * Allows the player to buy items from the shops along the oregon trail. Will calculate the players total amount of
+     * money spent.
+     */
     public void buyItems()
     {
         Scanner in = new Scanner(System.in);
@@ -116,6 +129,9 @@ public class Shop
         }
     }
 
+    /**
+     * Resets the player's money. Checks to make sure the player has enough money and will update the plays inventory.
+     */
     public void resetItems()
     {
         Inventory player = new Inventory();
