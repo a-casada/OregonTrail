@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class Menu {
     private int pace;
     private int ration;
@@ -19,9 +20,9 @@ public class Menu {
 
     public void loadMainMenu()
     {
-        System.out.println("░▀▀█▀▀░█░░░░█▀▀░░░▒█▀▀▀█░█▀▀▄░█▀▀░█▀▀▀░▄▀▀▄░█▀▀▄░░░▀▀█▀▀░█▀▀▄░█▀▀▄░▀█▀░█░░");
-        System.out.println("░░▒█░░░█▀▀█░█▀▀░░░▒█░░▒█░█▄▄▀░█▀▀░█░▀▄░█░░█░█░▒█░░░░▒█░░░█▄▄▀░█▄▄█░░█░░█░░");
-        System.out.println("░░▒█░░░▀░░▀░▀▀▀░░░▒█▄▄▄█░▀░▀▀░▀▀▀░▀▀▀▀░░▀▀░░▀░░▀░░░░▒█░░░▀░▀▀░▀░░▀░▀▀▀░▀▀▀");
+        System.out.println("[========================================================================]");
+        System.out.println("░▀▀█▀▀░█░░░░█▀▀░░░▒█▀▀▀█░█▀▀▄░█▀▀░█▀▀▀░▄▀▀▄░█▀▀▄░░░▀▀█▀▀░█▀▀▄░█▀▀▄░▀█▀░█░░\n░░▒█░░░█▀▀█░█▀▀░░░▒█░░▒█░█▄▄▀░█▀▀░█░▀▄░█░░█░█░▒█░░░░▒█░░░█▄▄▀░█▄▄█░░█░░█░░\n░░▒█░░░▀░░▀░▀▀▀░░░▒█▄▄▄█░▀░▀▀░▀▀▀░▀▀▀▀░░▀▀░░▀░░▀░░░░▒█░░░▀░▀▀░▀░░▀░▀▀▀░▀▀▀");
+        System.out.println("[========================================================================]");
     }
 
     /**
@@ -31,7 +32,8 @@ public class Menu {
 
     public void learnAboutTrail()
     {
-
+        System.out.println("\nAbout the Oregon Trail:\nThe Oregon Trail was a legendary 2170 mile stretch of land from Independence, Missouri to Oregon City, Oregon.\nThis was no simple road trip for those who wanted to experience the west, and many people faced extreme hardships along the way.\nToday you will be creating a story for your player who could be one of the 20,000 individuals to lose their life on the trail!\n");
+        System.out.println("[========================================================================]");
     }
 
     /**
@@ -99,13 +101,24 @@ public class Menu {
     public int[] startDate()
     {
         boolean validInput = false;
-        // int input = UserInput;
         int[] date = new int[3];
+        System.out.println(" Choose A Starting Month (type number)\n" +
+                "1. March\n" +
+                "2. April\n" +
+                "3. May\n" +
+                "4. June\n" +
+                "5. July\n" +
+                "6. August\n" +
+                "7. September\n");
+
+        Scanner in = new Scanner(System.in);    //Set up Scanner
+        int input = 0;                          //initialize input
+        input =  in.nextInt();            //gets next integer input as input.
 
         date[0] = 1;    //Set day
         date[1] = 4;    //Set initial month in case of error
         date[2] = 1860; //Set Year
-      /*  do {
+        do {
             switch (input) {
                 case 1: {
                    date[1] = 3;
@@ -149,6 +162,8 @@ public class Menu {
                 break;
             }
         }while (validInput = false); // Set Month */
+
+        System.out.println("You will now be starting on " + date[1] + ", " + date[0] + ", " + date[2] + ".\n[=========================================================================]");
         return date;
     }
 
@@ -164,13 +179,12 @@ public class Menu {
      */
     public void initialCash(int playerMoneyCount)
     {
-        System.out.println("[==========================================================]");
-        System.out.println("You have" + playerMoneyCount + " dollars. Spend them wisely...");
+        System.out.println("You have " + playerMoneyCount + " dollars. Spend them wisely...");
         System.out.println("In the shop you can find x, y,  and z items");
         System.out.println("X does this.");
         System.out.println("Y does that.");
-        System.out.println("Z does blah blah blah.");
-        System.out.println("[==========================================================]");
+        System.out.println("Z does blah blah blah.\n");
+        System.out.println("[=========================================================================]");
     }
 
 
