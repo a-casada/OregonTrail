@@ -32,7 +32,7 @@ public class Menu {
 
     public void learnAboutTrail()
     {
-        System.out.println("\nAbout the Oregon Trail:\nThe Oregon Trail was a legendary 2170 mile stretch of land from Independence, Missouri to Oregon City, Oregon.\nThis was no simple road trip for those who wanted to experience the west, and many people faced extreme hardships along the way.\nToday you will be creating a story for your player who could be one of the 20,000 individuals to lose their life on the trail!\n");
+        System.out.println("About the Oregon Trail:\nThe Oregon Trail was a legendary 2170 mile stretch of land from Independence, Missouri to Oregon City, Oregon.\nThis was no simple road trip for those who wanted to experience the west, and many people faced extreme hardships along the way.\nToday you will be creating a story for your player who could be one of the 20,000 individuals to lose their life on the trail!\n");
         System.out.println("[========================================================================]");
     }
 
@@ -101,14 +101,14 @@ public class Menu {
     {
         boolean validInput = false;
         int[] date = new int[3];
-        System.out.println(" Choose A Starting Month (type number)\n" +
+        System.out.println("Choose A Starting Month (type number)\n" +
                 "1. March\n" +
                 "2. April\n" +
                 "3. May\n" +
                 "4. June\n" +
                 "5. July\n" +
                 "6. August\n" +
-                "7. September\n");
+                "7. September");
 
         Scanner in = new Scanner(System.in);    //Set up Scanner
         int input = 0;                          //initialize input
@@ -162,7 +162,7 @@ public class Menu {
             }
         }while (validInput = false); // Set Month */
 
-        System.out.println("You will now be starting on " + date[1] + ", " + date[0] + ", " + date[2] + ".\n[=========================================================================]");
+        System.out.println("\nYour journey shall begin on " + date[1] + "-" + date[0] + "-" + date[2] + ".\n[=========================================================================]");
         return date;
     }
 
@@ -178,12 +178,25 @@ public class Menu {
      */
     public void initialCash(int playerMoneyCount)
     {
-        System.out.println("You have " + playerMoneyCount + " dollars. Spend them wisely...");
-        System.out.println("In the shop you can find x, y,  and z items");
-        System.out.println("X does this.");
-        System.out.println("Y does that.");
-        System.out.println("Z does blah blah blah.\n");
+        System.out.println("Every family has their own reason for leaving for Oregon, but our family is hoping to escape the overcrowding here in Louisiana.\nOur father, a banker, has stored us a healthy " + playerMoneyCount +  "$ for our trip... hopefully he spends it well.\nThe Clerk at the store told us to stock up on Oxen, Bullets, and medicine.\nWe were told only those with the speed of one hundred horses, the hunting spirit of Kit Carson, and plentiful medicine would make it to Oregon.\nHopefully his words hold true, but he wouldn't be the first to trying and swindle us out the last of our savings...");
+        System.out.println("\nIn the shop, you can buy: " +
+                "\n Food - Feeds party members, can be obtained at traders or through hunting " +
+                "\n Clothing - Protection from the weather" +
+                "\n Box of Bullets - For hunting and protection from bandits " +
+                "\n Oxen - Determines the speed of wagon (minimum: 4). Be wary of Oxen health. " +
+                "\n Wagon Wheel - For Repairs, Trades, or Sale" +
+                "\n Wagon Axle - For Repairs, Trades, or Sale" +
+                "\n Wagon Tongue -  For Repairs, Trades, or Sale" +
+                "\n Medical Supply Box - For healing the diseased and preventing death" + "\n   (Press 1 to continue to the shop)");
+
         System.out.println("[=========================================================================]");
+        Scanner in = new Scanner(System.in);    //Set up Scanner
+        int input = 0;                          //initialize input
+        input =  in.nextInt();                  //gets next integer input as input.
+        boolean validinput = false;             //sets up toggleable variable
+                do {
+                    validinput = input == 1;
+                }while(!validinput);
     }
 
 
