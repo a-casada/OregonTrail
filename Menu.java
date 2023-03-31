@@ -43,7 +43,6 @@ public class Menu {
      * Y - display how points are earned, then return to main menu
      * n - return to main menu
      */
-
     public void seeTopTen()
     {
 

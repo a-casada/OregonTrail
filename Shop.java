@@ -53,10 +53,14 @@ public class Shop
         while(item != 9)
         {
             System.out.println("You can buy: \n 1: Food ($1 for 5 pounds) \n 2: Set of Clothing ($10 for one set) \n 3: Box of Bullets ($2 per box, 20 bullets per box) \n 4: Oxen ($20 each) \n 5: Extra Wagon Wheel ($10 each) \n 6 Extra Wagon Axle ($10 each) \n 7 Extra Wagon Tongue ($10 each) \n 8 Medical Supply Box ($2 each) \n Type '9' to exit");
+            System.out.println("You have $" + playerMoneyCount);
             System.out.print("What item would you like to buy? ");
             item = in.nextInt();
             System.out.print("How many of this item do you want? ");
             amount = in.nextInt();
+
+            System.out.println("[========================================================================]");
+
 
             switch(item)
             {
@@ -112,12 +116,15 @@ public class Shop
                 {
                     resetItems();
                     System.out.println("Exiting the shop...");
+                    System.out.println("[========================================================================]");
                     moneyUsed = 0;
                 }
                 break;
                 default:
                 {
                     System.out.println("That is not an item!");
+                    System.out.println("[========================================================================]");
+
                 }
             }
 
