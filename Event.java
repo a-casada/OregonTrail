@@ -2,7 +2,7 @@
 import java.util.Random;
 
 public class Event{
-
+//comment
     //instance variables
     private int playerMoneyCount = 1600;
     private static int foodCount = 0;
