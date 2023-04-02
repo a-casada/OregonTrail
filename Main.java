@@ -6,8 +6,10 @@ public class Main {
         Inventory inv = new Inventory();
         //Programs Goes through title screen and main menu items
         screen1.loadMainMenu(); //load title screen + opening credits
+        screen1.introAboutTrail(); // Short blurb about the trail before main menu loads
                                 //load main menu
-        screen1.learnAboutTrail(); // output history about trail
+        screen1.learnAboutTrail();  //output detailed history about the Oregon trail
+        screen1.learnAboutHattie(); //output img of hattie
                                 // show top scores
                                 // options / management program
                                     //reset top 10 scores
@@ -38,7 +40,7 @@ public class Main {
                 //change rations
                 //change speed
                 //
-
+        //Exit gameplay loop and return to main menu
 
     }
 }

@@ -21,21 +21,86 @@ public class Menu {
     public void loadMainMenu()
     {
         System.out.println("[========================================================================]");
-        System.out.println("░▀▀█▀▀░█░░░░█▀▀░░░▒█▀▀▀█░█▀▀▄░█▀▀░█▀▀▀░▄▀▀▄░█▀▀▄░░░▀▀█▀▀░█▀▀▄░█▀▀▄░▀█▀░█░░\n░░▒█░░░█▀▀█░█▀▀░░░▒█░░▒█░█▄▄▀░█▀▀░█░▀▄░█░░█░█░▒█░░░░▒█░░░█▄▄▀░█▄▄█░░█░░█░░\n░░▒█░░░▀░░▀░▀▀▀░░░▒█▄▄▄█░▀░▀▀░▀▀▀░▀▀▀▀░░▀▀░░▀░░▀░░░░▒█░░░▀░▀▀░▀░░▀░▀▀▀░▀▀▀");
+        System.out.println("░▀▀█▀▀░█░░░░█▀▀░░░▒█▀▀▀█░█▀▀▄░█▀▀░█▀▀▀░▄▀▀▄░█▀▀▄░░░▀▀█▀▀░█▀▀▄░█▀▀▄░▀█▀░█░░\n░░▒█░░░█▀▀█░█▀▀░░░▒█░░▒█░█▄▄▀░█▀▀░█░▀▄░█░░█░█░▒█░░░░▒█░░░█▄▄▀░█▄▄█░░█░░█░░\n░░▒█░░░▀░░▀░▀▀▀░░░▒█▄▄▄█░▀░▀▀░▀▀▀░▀▀▀▀░░▀▀░░▀░░▀░░░░▒█░░░▀░▀▀░▀░░▀░▀▀▀░▀▀▀\n By: A. Burkholder A. Casada, A. Guzman, and K. McClure ");
         System.out.println("[========================================================================]");
     }
-
+    /**
+     * Intro about trail
+     * Short intro before main menu.
+     */
+    public void introAboutTrail()
+    {
+        System.out.println("About the Oregon Trail:" +
+                "\n The Oregon Trail was a legendary 2170 mile stretch of land from Independence, Missouri to Oregon City, Oregon." +
+                "\n This was no simple road trip for those who wanted to experience the west, and many people faced extreme hardships along the way." +
+                "\n\n Today you will be carving your own path on the trail, playing in the shoes of 13 year old Hattie Camblee." +
+                "\n Will you aid your family in making it to Oregon, or will you be one of the 20,000 individuals to lose their life on the trail?\n");
+        System.out.println("[========================================================================]");
+        continu();
+    }
     /**
      * Learn about Trail
-     * Displays the "Learn about the trail" text to inform the user about the trail.
+     * Displays the "Learn about the trail" text in main menu.
      */
 
     public void learnAboutTrail()
     {
-        System.out.println("About the Oregon Trail:\nThe Oregon Trail was a legendary 2170 mile stretch of land from Independence, Missouri to Oregon City, Oregon.\nThis was no simple road trip for those who wanted to experience the west, and many people faced extreme hardships along the way.\nToday you will be creating a story for your player who could be one of the 20,000 individuals to lose their life on the trail!\n");
+        System.out.println("About the Oregon Trail:" +
+                "\n The Oregon Trail was a legendary 2170 mile stretch of land from Independence, Missouri to Oregon City, Oregon." +
+                "\n In the early 1800s, the trail was utilized by fur traders, only traveling the tail on horseback." +
+                "\n By 1836, wagon trains from Independence, Missouri began clearing the trail to Oregon. " +
+                "\n As the years went on, roads, bridges, and ferries were built to speed up the journey. " +
+                "\n In the 1840's, the Organic Laws of Oregon promised free land to any settlers who chose to move to Oregon." +
+                "\n The term \"Manifest Destiny\" was coined to describe the thousands of families who traveled the trails, inspired by that very promise. " +
+                "\n Many other families were inspired by the California Gold rush in 1948, inspired from the promise of riches." +
+                "\n By the 1860's, many were traveling on ferries, with rivers and canals bring created to aid the pioneers." +
+                "\n Finally, in 1869, the transcontinental railroad was completed, leading many to chose it over the trail.");
         System.out.println("[========================================================================]");
+        continu();
     }
 
+    public void learnAboutHattie()
+    {
+        System.out.println("@@@@@@@@@@@@@@&GYYYYY5555555Y?~:     ..::::^~7J55555YYYYYYYYYJJJ5B@@@@@@@@@@@@@@\n" +
+                "@@@@@@@@@@@@&B555555555555Y7.     ..:::^~!~~^::^^~7Y555YYYYYYYYYJYP#@@@@@@@@@@@@\n" +
+                "@@@@@@@@@@@#PY555555555P5!....::^^~~~!!!!!~~^^~~^:::!Y55YYYYYYYYYYJYG&@@@@@@@@@@\n" +
+                "@@@@@@@@@@B555555555555P7..:^!7???JJJJJJJ???77!~~^::..7PP55YYYYYYYYYJ5#@@@@@@@@@\n" +
+                "@@@@@@@@&BGPPP55555555PJ:.^7YY555PPPPPPP55YYYJ?7!!~:. 7GGP555YYYYYYYYY5#@@@@@@@@\n" +
+                "@@@@@@@&GPPPPPPPPPPPPPP!.^!JY55PPPPPPPPPP555YYYY??!^..~PPPPPP55555YY5555B@@@@@@@\n" +
+                "@@@@@@&GPPPPPPPPPPPPPPP7.~?Y55PPPPPPPPPP55555YYJ?!~^:.:YPP555PPPPPP555YY5B@@@@@@\n" +
+                "@@@@@&GPPPPPPPPPPPPPPPGJ:!YY55PPPPPPPPP55YYY55YJ!~^::. !PPPP55555555555555#@@@@@\n" +
+                "@@@@@GPPPPPPPPPPPPPPGGG7.!7??777J5P55Y?77?JJYJYY?~^:.. ^PGPPPPPPP5555555YY5#@@@@\n" +
+                "@@@@#GGGGPGGGGGGGGGGGGP^.7?!!!~!7YPPYJ?77~!7?YJYY7^:..^?PPPPPPPPPPPPPP55555P&@@@\n" +
+                "@@@&GGGGGGGGGGGGGGGGGGG?^?JJJJ?YYYP5YYY5Y???J5555J^:^~!YGPPPPPPPPPPPPPPPPPPPB@@@\n" +
+                "@@@BGGGGGPPPPGGGGGGGGGGP!7Y5PPPP5555YY5PPPPPP5YYYJ~^~77YPPPPPPPPPPPPPPPPPPPPP&@@\n" +
+                "@@&GGGPP55PPPPPGPPGGGGG5~!?Y55PPYYYJJY5PPPPP55YJ?7!~~7YPPPPPPPPPPPPPP55PPPPPPB@@\n" +
+                "@@BPPPP555PPPPPPPPPPPP5JYY7JY5PPYYYYY5PPPP555YJJ?777?YPPPP5555P5YYYYJJ5PP5PPPG&@\n" +
+                "@&G555555PPPPPPPPPPPPPPPGP??Y555YY5YY5555555YJJ??~?55555JJJJJP5J?????5PP55Y5PP#@\n" +
+                "@#5555555PPPPP5PPPPPPPPPPP5??YJ?777777?Y55YYYJ??7!JJJJJJJ???JJJ?77???5PPPJ~!YPB@\n" +
+                "@#5YYY555PPPPPPPPPP5555555PY??YJ??JJJJ5555YYJ????YJJ?JJJJJJ??J??????J5PPP7^^?PB@\n" +
+                "@BYYYYYY5555555555P555Y5555P5J?YY55PP5555YJ???JJJYJJ??JJJJJ??JJJ?????5PP5!^^JPP&\n" +
+                "@BYYYYYYYYYYYY5555555555555555YJJJJJJJ??777?JYYJYJJ??JJJJJJ??JJJJ????5PPP7:!P55&\n" +
+                "@BYYYJJJYYYYYYYYYYYYYYYYYYYYYYYYYJ!!!!77?JYY55555YYYPGPJ777!!!!!!7!!!7JY55Y5PY5&\n" +
+                "@BYJJJJJJJJJJJJJJJJJJJJJJJJJJJJJYY~!??JYYY555555PPGGPPPY777777!!!!!7!7!?55555YP@\n" +
+                "@#5555555555555555555555YYYJ?7JPPJ77?JJYY55PPGGGGPYJ?!~^^~!!7!!!77!!?7!J5PP55YG@\n" +
+                "@&G55555YYYYYJJJYYYYJJ?77!~~~~755YY??YPPPGGP5J??7~^^^~~~~^^^~7JJ?77~!J77J?JJJY#@\n" +
+                "@@BYYYYYYJJJJJJJ?!^~~^~^^~7JJY55YJ?J?J5P5?!~^^^~~~!!!!!!!~~~~^^^7?JJJJ?!777!!J&@\n" +
+                "@@&5Y55YYYYY55J!~^~!!!!~~JYYYYYYY5555Y?~^:^~!!!!!!!!!!!!!!!!!!!~~~!JJJ7!?YJ7!G@@\n" +
+                "@@@GYYYYYYYY5J~^~!!!!!^^J5YYYYYYYY5555J~~!!!!!!!!77!!!!!!!77777!!!~^~7??!777J&@@\n" +
+                "@@@&5JYYYYYY?~~!!!!~~^~J55555YYYY555Y?7?!!!!!!!!7!!!!!!!7!!77!7777!~~^^!7777G@@@\n" +
+                "@@@@BJJJYYY7~^~!~~^~^755555555555Y?~:.:^!!!!!!!!!!!!7!!!!!7!!7?7!!~~~~^~Y5YG@@@@\n" +
+                "@@@@@PJYYY7~~^^~^^^!J5555555555Y!^:^~!!!!!!!!!!!!!!!!~!!!!~!777!!7!~~^^^JY5&@@@@\n" +
+                "@@@@@&5JYJ~^^:^:^~75555555555Y7::~!!!!!!!!!!!!!!7!!!~!!!!~~77!!!!7!!~^^^!Y#@@@@@\n" +
+                "@@@@@@&5Y?^::..^!77?J555555Y7^.^!!!!!7!!!!!!!!7!!~!~!!~!~!77!!!!!!!!!~^:~B@@@@@@\n" +
+                "@@@@@@@&PJ~...~7!!777777?J?^.:!!!!!!!!!!!!!77!!!!!~~~~!^!7!!!!!!!!!!!~^!G@@@@@@@\n" +
+                "@@@@@@@@&G~..~!~!7777~^^^:..^!!!!!!!!!!!7!7!!!!!!~~^^!^~7!~!!!!!!!!!!~?#@@@@@@@@\n" +
+                "@@@@@@@@@@P~^~~!?777!~~~^..^!!!!!!!!!!!777~^^^~~~~^:~~^!!~~!~~!!!!!!!5&@@@@@@@@@\n" +
+                "@@@@@@@@@@@#Y7!!777~^^^^: :!!!!!!!!!7777!~~~~~~~~~::~:^!~~~!~~!!~~~?G@@@@@@@@@@@\n" +
+                "@@@@@@@@@@@@@BJ7!!~::::: .^!!!!!!!!7!7!!~!!~~~~~~^:^^:^~~~~~~~!~~75&@@@@@@@@@@@@\n" +
+                "@@@@@@@@@@@@@@&G?~^^~^^. :~~~~~~!!!!!!~~~~~~~~^^^::^^:~^~~~~^^~75#@@@@@@@@@@@@@@\n" +
+                "Above: Hattie Campbell on her 13th birthday, only weeks away from crossing the Oregon Trail");
+        continu();
+    }
     /**
      * See Top Ten
      * Displays the top ten expeditions on the menu, both names and scores.
@@ -61,25 +126,6 @@ public class Menu {
     public void chooseManagementOptions()
     {
 
-    }
-
-    /**
-     * Set Names
-     * Displays the name setting screen.
-     * Asks user for the names of the 5 traveling members.
-     * Display the names for the user
-     * Asks the user if the names are correct.
-     * @return String[5] of the names as an array.
-     */
-    public String[] setNames()
-    {
-        String[] name = new String[5];
-        for (int i = 0; i < 5; i++)
-        {
-            name[i] = "Player" + (i+1);
-
-        }
-        return  name;
     }
 
     /**
@@ -163,7 +209,9 @@ public class Menu {
         }while (validInput = false); // Set Month */
 
         System.out.println("\nYour journey shall begin on " + date[1] + "-" + date[0] + "-" + date[2] + ".\n[=========================================================================]");
+        continu();
         return date;
+
     }
 
 
@@ -188,15 +236,25 @@ public class Menu {
                 "\n Wagon Axle - For Repairs, Trades, or Sale" +
                 "\n Wagon Tongue -  For Repairs, Trades, or Sale" +
                 "\n Medical Supply Box - For healing the diseased and preventing death" + "\n   (Press 1 to continue to the shop)");
-
         System.out.println("[=========================================================================]");
-        Scanner in = new Scanner(System.in);    //Set up Scanner
-        int input = 0;                          //initialize input
-        input =  in.nextInt();                  //gets next integer input as input.
+        continu();
+    }
+
+
+    /**Continue Class
+     * Adds: "submit "0" to continue"
+     * Once zero is submitted, code finishes.
+     */
+    public void continu()
+    {
+        System.out.println("    Submit \"0\" to continue.");
+        Scanner inContinu = new Scanner(System.in);    //Set up Scanner
+        int input = 99;                          //initialize input
         boolean validinput = false;             //sets up toggleable variable
-                do {
-                    validinput = input == 1;
-                }while(!validinput);
+        do {
+            input =  inContinu.nextInt();                  //gets next integer input as input.
+            validinput = input == 0;
+        }while(!validinput);
     }
 
 
