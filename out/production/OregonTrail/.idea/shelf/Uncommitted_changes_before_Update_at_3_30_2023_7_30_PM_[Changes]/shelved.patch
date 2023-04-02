@@ -1,0 +1,114 @@
+Index: Inventory.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class Inventory\r\n{\r\n    private int playerMoneyCount = 1600;\r\n    private int foodCount = 0;\r\n    private int clothingCount = 0;\r\n    private int bulletsCount = 0;\r\n    private int oxenCount = 0;\r\n    private int wagonWheelCount = 4;\r\n    private int wagonAxleCount = 1;\r\n    private int wagonTongueCount = 1;\r\n    private int medicalSupplyCount = 0;\r\n    private int familyPet = 1;\r\n    private boolean wagonUsable = false;\r\n\r\n    public Inventory()\r\n    {\r\n\r\n    }\r\n\r\n    public int getPlayerMoneyCount()\r\n    {\r\n        return playerMoneyCount;\r\n    }\r\n\r\n    public int getFoodCount()\r\n    {\r\n        return foodCount;\r\n    }\r\n\r\n    public int getClothingCount()\r\n    {\r\n        return clothingCount;\r\n    }\r\n\r\n    public int getBulletsCount()\r\n    {\r\n        return bulletsCount;\r\n    }\r\n\r\n    public int getOxenCount()\r\n    {\r\n        return oxenCount;\r\n    }\r\n\r\n    public int getWagonWheelCount()\r\n    {\r\n        return wagonWheelCount;\r\n    }\r\n\r\n    public int getWagonAxleCount()\r\n    {\r\n        return wagonAxleCount;\r\n    }\r\n\r\n    public int getWagonTongueCount()\r\n    {\r\n        return wagonTongueCount;\r\n    }\r\n\r\n    public int getMedicalSupplyCount()\r\n    {\r\n        return medicalSupplyCount;\r\n    }\r\n\r\n    public int getFamilyPet()\r\n    {\r\n        return familyPet;\r\n    }\r\n\r\n    public boolean getWagonUsableStatus()\r\n    {\r\n        return wagonUsable;\r\n    }\r\n\r\n    public int setPlayerMoneyCount(int playerMoneyCount)\r\n    {\r\n        this.playerMoneyCount = this.playerMoneyCount + playerMoneyCount;\r\n    }\r\n\r\n    public int setFoodCount(int foodCount)\r\n    {\r\n        this.foodCount = this.foodCount + foodCount;\r\n    }\r\n\r\n    public int setClothingCount(int clothingCount)\r\n    {\r\n        this.clothingCount = this.clothingCount + clothingCount;\r\n    }\r\n\r\n    public int setBulletsCount(int bulletsCount)\r\n    {\r\n        this.bulletsCount = this.bulletsCount + bulletsCount;\r\n    }\r\n\r\n    public int setOxenCount(int oxenCount)\r\n    {\r\n        this.oxenCount = this.oxenCount + oxenCount;\r\n    }\r\n\r\n    public int setWagonWheelCount(int wagonWheelCount)\r\n    {\r\n        this.wagonWheelCount = this.wagonWheelCountwagonWheelCount;\r\n    }\r\n\r\n    public int setWagonAxleCount(int wagonAxleCount)\r\n    {\r\n        this.wagonAxleCount = this.wagonAxleCount + wagonAxleCount;\r\n    }\r\n\r\n    public int setWagonTongueCount(int wagonTongueCount)\r\n    {\r\n        this.wagonTongueCount = this.wagonTongueCount + wagonTongueCount;\r\n    }\r\n\r\n    public int setMedicalSupplyCount(int medicalSupplyCount)\r\n    {\r\n        this.medicalSupplyCount = this.medicalSupplyCount + medicalSupplyCount;\r\n    }\r\n\r\n    public int setFamilyPet(int familyPet)\r\n    {\r\n        this.familyPet = this.familyPet + familyPet;\r\n    }\r\n\r\n    public boolean setWagonUsable(boolean wagonUsable)\r\n    {\r\n        this.wagonUsable = wagonUsable;\r\n    }\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Inventory.java b/Inventory.java
+--- a/Inventory.java	(revision 7a213c89e913c6b38b998f6a6caf6ce819b28ff2)
++++ b/Inventory.java	(date 1680218968302)
+@@ -99,7 +99,7 @@
+ 
+     public int setWagonWheelCount(int wagonWheelCount)
+     {
+-        this.wagonWheelCount = this.wagonWheelCountwagonWheelCount;
++        this.wagonWheelCount = this.wagonWheelCount;
+     }
+ 
+     public int setWagonAxleCount(int wagonAxleCount)
+@@ -107,7 +107,7 @@
+         this.wagonAxleCount = this.wagonAxleCount + wagonAxleCount;
+     }
+ 
+-    public int setWagonTongueCount(int wagonTongueCount)
++    public void setWagonTongueCount(int wagonTongueCount)
+     {
+         this.wagonTongueCount = this.wagonTongueCount + wagonTongueCount;
+     }
+Index: Menu.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class Menu {\r\n    private int pace;\r\n    private int ration;\r\n\r\n    public Menu() {\r\n        this.pace = 0;\r\n        this.ration = 0;\r\n    } // default\r\n\r\n    /**\r\n     * Load Main Menu\r\n     * Sets the display for the main menu, does NOT receive inputs or give outputs.\r\n     *      1. Travel the trail\r\n     *      2. Learn about the trail\r\n     *      3. See the Oregon Top Ten\r\n     *      4. Choose Management Options\r\n     *      5. End\r\n     */\r\n\r\n    public void loadMainMenu()\r\n    {\r\n        System.out.println(\"░▀▀█▀▀░█░░░░█▀▀░░░▒█▀▀▀█░█▀▀▄░█▀▀░█▀▀▀░▄▀▀▄░█▀▀▄░░░▀▀█▀▀░█▀▀▄░█▀▀▄░▀█▀░█░░\");\r\n        System.out.println(\"░░▒█░░░█▀▀█░█▀▀░░░▒█░░▒█░█▄▄▀░█▀▀░█░▀▄░█░░█░█░▒█░░░░▒█░░░█▄▄▀░█▄▄█░░█░░█░░\");\r\n        System.out.println(\"░░▒█░░░▀░░▀░▀▀▀░░░▒█▄▄▄█░▀░▀▀░▀▀▀░▀▀▀▀░░▀▀░░▀░░▀░░░░▒█░░░▀░▀▀░▀░░▀░▀▀▀░▀▀▀\");\r\n    }\r\n\r\n    /**\r\n     * Learn about Trail\r\n     * Displays the \"Learn about the trail\" text to inform the user about the trail.\r\n     */\r\n\r\n    public void learnAboutTrail()\r\n    {\r\n\r\n    }\r\n\r\n    /**\r\n     * See Top Ten\r\n     * Displays the top ten expeditions on the menu, both names and scores.\r\n     * Asks if we would like to see how points are earned.\r\n     * Y - display how points are earned, then return to main menu\r\n     * n - return to main menu\r\n     */\r\n\r\n    public void seeTopTen()\r\n    {\r\n\r\n    }\r\n\r\n    /**\r\n     * Choose Management Options\r\n     * Displays the \"Management Options\" Menu:\r\n     *      See Current Top Ten List\r\n     *      See Original Top Ten List\r\n     *      Erase Current Top Ten List\r\n     *      Erase Tombstone Messages\r\n     *      Toggle Pictures (Turns off the fun photos we added for each fort)\r\n     *      Return to the Main Menu.\r\n     */\r\n    public void chooseManagementOptions()\r\n    {\r\n\r\n    }\r\n\r\n    /**\r\n     * Set Names\r\n     * Displays the name setting screen.\r\n     * Asks user for the names of the 5 traveling members.\r\n     * Display the names for the user\r\n     * Asks the user if the names are correct.\r\n     * @return String[5] of the names as an array.\r\n     */\r\n    public String[] setNames()\r\n    {\r\n        String[] name = new String[5];\r\n        for (int i = 0; i < 5; i++)\r\n        {\r\n            name[i] = \"Player\" + (i+1);\r\n\r\n        }\r\n        return  name;\r\n    }\r\n\r\n    /**\r\n     * setStartDate\r\n     * Displays the date selection screen.\r\n     *      \"Choose A Starting Month\"\r\n     *      1. March\r\n     *      2. April\r\n     *      3. May\r\n     *      4. June\r\n     *      5. July\r\n     *      6. August\r\n     *      7. September\r\n     * Asks user to choose a month to depart.\r\n     * Asks the user if they are sure.\r\n     * @return int[3] (the date: DAY, MONTH (int), YEAR)\r\n     */\r\n    public int[] startDate()\r\n    {\r\n        boolean validInput = false;\r\n        // int input = UserInput;\r\n        int[] date = new int[3];\r\n\r\n        date[0] = 1;    //Set day\r\n        date[1] = 4;    //Set initial month in case of error\r\n        date[2] = 1860; //Set Year\r\n      /*  do {\r\n            switch (input) {\r\n                case 1: {\r\n                   date[1] = 3;\r\n                    validInput = true;\r\n                } // March\r\n                break;\r\n                case 2: {\r\n                    date[1] = 4;\r\n                    validInput = true;\r\n                } // April\r\n                break;\r\n                case 3: {\r\n                    date[1] = 5;\r\n                    validInput = true;\r\n                } // May\r\n                break;\r\n                case 4: {\r\n                    date[1] = 6;\r\n                    validInput = true;\r\n                } // June\r\n                break;\r\n                case 5: {\r\n                    date[1] = 7;\r\n                    validInput = true;\r\n                } // July\r\n                break;\r\n                case 6: {\r\n                    date[1] = 8;\r\n                    validInput = true;\r\n                } // August\r\n                break;\r\n                case 7: {\r\n                    date[1] = 9;\r\n                    validInput = true;\r\n                } // September\r\n                break;\r\n                default: {\r\n\r\n                    validInput = false;\r\n                }\r\n                break;\r\n            }\r\n        }while (validInput = false); // Set Month */\r\n        return date;\r\n    }\r\n\r\n\r\n\r\n    /**\r\n     * initial Cash\r\n     * Displays the \"Here is your initial cash\" Screen:\r\n     *      Display in-depth motive for leaving oregon\r\n     *      Display Spendable Cash\r\n     *      Provide descriptions for items available in the shop\r\n     *      Provide hints for the trail.\r\n     */\r\n    public void initialCash(int playerMoneyCount)\r\n    {\r\n        System.out.println(\"[==========================================================]\");\r\n        System.out.println(\"You have\" + playerMoneyCount + \" dollars. Spend them wisely...\");\r\n        System.out.println(\"In the shop you can find x, y,  and z items\");\r\n        System.out.println(\"X does this.\");\r\n        System.out.println(\"Y does that.\");\r\n        System.out.println(\"Z does blah blah blah.\");\r\n        System.out.println(\"[==========================================================]\");\r\n    }\r\n\r\n\r\n    /**\r\n     * Getters and setters\r\n     * @return int\r\n     */\r\n    public int getPace() {return pace;}\r\n    public void setPace(int pace) {this.pace = pace;}\r\n    public int getRation() {return ration;}\r\n    public void setRation(int ration) {this.ration = ration;}\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Menu.java b/Menu.java
+--- a/Menu.java	(revision 7a213c89e913c6b38b998f6a6caf6ce819b28ff2)
++++ b/Menu.java	(date 1680218500374)
+@@ -7,8 +7,7 @@
+         this.ration = 0;
+     } // default
+ 
+-    /**
+-     * Load Main Menu
++    /**Load Main Menu
+      * Sets the display for the main menu, does NOT receive inputs or give outputs.
+      *      1. Travel the trail
+      *      2. Learn about the trail
+@@ -24,8 +23,7 @@
+         System.out.println("░░▒█░░░▀░░▀░▀▀▀░░░▒█▄▄▄█░▀░▀▀░▀▀▀░▀▀▀▀░░▀▀░░▀░░▀░░░░▒█░░░▀░▀▀░▀░░▀░▀▀▀░▀▀▀");
+     }
+ 
+-    /**
+-     * Learn about Trail
++    /**Learn about Trail
+      * Displays the "Learn about the trail" text to inform the user about the trail.
+      */
+ 
+@@ -34,8 +32,7 @@
+ 
+     }
+ 
+-    /**
+-     * See Top Ten
++    /**See Top Ten
+      * Displays the top ten expeditions on the menu, both names and scores.
+      * Asks if we would like to see how points are earned.
+      * Y - display how points are earned, then return to main menu
+@@ -47,8 +44,7 @@
+ 
+     }
+ 
+-    /**
+-     * Choose Management Options
++    /**Choose Management Options
+      * Displays the "Management Options" Menu:
+      *      See Current Top Ten List
+      *      See Original Top Ten List
+@@ -62,8 +58,7 @@
+ 
+     }
+ 
+-    /**
+-     * Set Names
++    /**Set Names
+      * Displays the name setting screen.
+      * Asks user for the names of the 5 traveling members.
+      * Display the names for the user
+@@ -81,8 +76,7 @@
+         return  name;
+     }
+ 
+-    /**
+-     * setStartDate
++    /**setStartDate
+      * Displays the date selection screen.
+      *      "Choose A Starting Month"
+      *      1. March
+@@ -154,8 +148,7 @@
+ 
+ 
+ 
+-    /**
+-     * initial Cash
++    /** initial Cash
+      * Displays the "Here is your initial cash" Screen:
+      *      Display in-depth motive for leaving oregon
+      *      Display Spendable Cash
+@@ -182,4 +175,5 @@
+     public void setPace(int pace) {this.pace = pace;}
+     public int getRation() {return ration;}
+     public void setRation(int ration) {this.ration = ration;}
++
+ }
