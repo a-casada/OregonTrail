@@ -50,5 +50,4 @@ public class Party
     {
         this.names = names;
     }
-
 }

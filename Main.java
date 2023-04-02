@@ -4,6 +4,7 @@ public class Main {
         //Program Loads objects
         Menu screen1 = new Menu();
         Inventory inv = new Inventory();
+        Shop shop = new Shop(inv, inv.getPlayerMoneyCount());
         Map map = new Map();
         Date date = new Date();
         Menu menu = new Menu();
@@ -22,13 +23,12 @@ public class Main {
         screen1.startDate();    //Ask When they will set off (with blurb about how that effects the trail)
         //Ask for social rank / starting cash (poor, rich, president)
         screen1.initialCash(inv.getPlayerMoneyCount()); //Display blurb about starting cash, what they could buy, and what they should buy.  (maybe add lore here based on class)
-        inv.goToShop(); //Display starting shop
+        shop.buyItems();
         //Display graphic for "Beginning the journey"
         inv.isWagonUsable();
 
 
         //Game Loop
-        //note if gravestone was passed (display if so)
         //increment date
         //increment weather / terrain if needed
         //increment distance to oregon                      (DONE)
@@ -46,10 +46,13 @@ public class Main {
         //
         //Exit gameplay loop and return to main menu
 
+        System.out.println("KEEEEFFER");
+        System.out.println(inv.getOxenCount());
+        System.out.println(inv.getPlayerMoneyCount());
 
-        while(map.getPosition() <  250 && inv.isWagonUsable())
+        while((map.getPosition() <  250) && inv.isWagonUsable())
         {
-
+            map.progressBar();
 
 
 

@@ -11,20 +11,13 @@ public class Inventory
     private int medicalSupplyCount = 0;
     private boolean wagonUsable = false;
 
+
     /**
      * Default constructor for the Inventory class.
      */
     public Inventory()
     {
 
-    }
-
-    /**
-     * Takes the player into the class.
-     */
-    public void goToShop()
-    {
-        Shop goToTheShop = new Shop(playerMoneyCount);
     }
 
     /**
@@ -146,22 +139,6 @@ public class Inventory
         return wagonUsable;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     /**
      * Sets the player's amount of money.
      *
@@ -251,5 +228,4 @@ public class Inventory
     {
         this.medicalSupplyCount = this.medicalSupplyCount + medicalSupplyCount;
     }
-
 }
