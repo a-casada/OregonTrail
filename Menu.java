@@ -64,25 +64,6 @@ public class Menu {
     }
 
     /**
-     * Set Names
-     * Displays the name setting screen.
-     * Asks user for the names of the 5 traveling members.
-     * Display the names for the user
-     * Asks the user if the names are correct.
-     * @return String[5] of the names as an array.
-     */
-    public String[] setNames()
-    {
-        String[] name = new String[5];
-        for (int i = 0; i < 5; i++)
-        {
-            name[i] = "Player" + (i+1);
-
-        }
-        return  name;
-    }
-
-    /**
      * setStartDate
      * Displays the date selection screen.
      *      "Choose A Starting Month"
@@ -166,7 +147,20 @@ public class Menu {
         return date;
     }
 
+    public String[] setNames()
+    {
+        String names[] = new String[4];
+        Scanner in = new Scanner(System.in);
+        System.out.println("What are the names of yourself (1), your three family members (2, 3), and your pet (4)?");
+        for(int i = 0; i <names.length; i++)
+        {
+            System.out.print("(" + (i+1) + ")");
+            names[i] = in.nextLine();
+        }
+        System.out.println("[========================================================================]");
 
+        return names;
+    }
 
     /**
      * initial Cash

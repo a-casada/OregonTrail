@@ -34,7 +34,7 @@ public class Inventory
      */
     public boolean isWagonUsable()
     {
-        if (wagonWheelCount >= 4 && wagonAxleCount >= 2 && wagonTongueCount >= 1)
+        if (wagonWheelCount >= 4 && wagonAxleCount >= 2 && wagonTongueCount >= 1 && oxenCount >= 1)
         {
             wagonUsable = true;
         }
