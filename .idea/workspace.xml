@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4f7869c-c7d1-4acd-bc7f-a2c1c9a9db18" name="Changes" comment="Committed">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_30_2023_7_30_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_30_2023_7_30_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OregonTrail/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OregonTrail/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OregonTrail/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OregonTrail/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OregonTrail/Shop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OregonTrail/Shop.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main0.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
