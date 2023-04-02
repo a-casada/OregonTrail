@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f4f7869c-c7d1-4acd-bc7f-a2c1c9a9db18" name="Changes" comment="Committed" />
+    <list default="true" id="f4f7869c-c7d1-4acd-bc7f-a2c1c9a9db18" name="Changes" comment="Committed">
+      <change beforePath="$PROJECT_DIR$/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main0.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/Shop.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,7 +60,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Committed" />
-    <MESSAGE value="Committe" />
-    <option name="LAST_COMMIT_MESSAGE" value="Committe" />
+    <option name="LAST_COMMIT_MESSAGE" value="Committed" />
   </component>
 </project>

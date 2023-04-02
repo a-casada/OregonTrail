@@ -97,7 +97,7 @@ public class Inventory
     }
 
     /**
-     * Gets the player's amount of money.
+     * Gets the player's number of wagon wheels.
      *
      * @return The player's current number of wagon wheels.
      */
@@ -107,9 +107,9 @@ public class Inventory
     }
 
     /**
-     * Gets the player's amount of money.
+     * Gets the player's number of wagon axles.
      *
-     * @return The player's current amount of money.
+     * @return The player's current number of wagon axles.
      */
     public int getWagonAxleCount()
     {
@@ -117,9 +117,9 @@ public class Inventory
     }
 
     /**
-     * Gets the player's amount of money.
+     * Gets the player's number of wagon tongues.
      *
-     * @return The player's current amount of money.
+     * @return The player's current number of wagon tongues.
      */
     public int getWagonTongueCount()
     {
@@ -127,9 +127,9 @@ public class Inventory
     }
 
     /**
-     * Gets the player's amount of money.
+     * Gets the player's number of medical supplies.
      *
-     * @return The player's current amount of money.
+     * @return The player's current amount of medical supplies.
      */
     public int getMedicalSupplyCount()
     {
@@ -146,51 +146,107 @@ public class Inventory
         return wagonUsable;
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /**
-     * Sets
+     * Sets the player's amount of money.
      *
-     * @param playerMoneyCount
+     * @param playerMoneyCount The player's updated amount of money.
      */
     public void setPlayerMoneyCount(int playerMoneyCount)
     {
         this.playerMoneyCount = playerMoneyCount;
     }
 
+    /**
+     * Sets the player's amount of food.
+     *
+     * @param foodCount The player's updated amount of food.
+     */
     public void setFoodCount(int foodCount)
     {
         this.foodCount = this.foodCount + foodCount;
     }
 
+    /**
+     * Sets the player's number of clothing sets.
+     *
+     * @param clothingCount The player's updated number of clothing sets.
+     */
     public void setClothingCount(int clothingCount)
     {
         this.clothingCount = this.clothingCount + clothingCount;
     }
 
+    /**
+     * Sets the player's number of bullets.
+     *
+     * @param bulletsCount The player's updated number of bullets.
+     */
     public void setBulletsCount(int bulletsCount)
     {
         this.bulletsCount = this.bulletsCount + bulletsCount;
     }
 
+    /**
+     * Sets the player's number of oxen.
+     *
+     * @param oxenCount The player's updated number of oxen.
+     */
     public void setOxenCount(int oxenCount)
     {
         this.oxenCount = this.oxenCount + oxenCount;
     }
 
+    /**
+     * Sets the player's number of wagon wheels.
+     *
+     * @param wagonWheelCount The player's updated number of wagon wheels.
+     */
     public void setWagonWheelCount(int wagonWheelCount)
     {
         this.wagonWheelCount = this.wagonWheelCount + wagonWheelCount;
     }
 
+    /**
+     * Sets the player's number of wagon axles.
+     *
+     * @param wagonAxleCount The player's updated number of wagon axles.
+     */
     public void setWagonAxleCount(int wagonAxleCount)
     {
         this.wagonAxleCount = this.wagonAxleCount + wagonAxleCount;
     }
 
+    /**
+     * Sets the player's number of wagon tongues.
+     *
+     * @param wagonTongueCount The player's updated number of wagon tongues.
+     */
     public void setWagonTongueCount(int wagonTongueCount)
     {
         this.wagonTongueCount = this.wagonTongueCount + wagonTongueCount;
     }
 
+    /**
+     * Sets the player's number of medical supplies.
+     *
+     * @param medicalSupplyCount The player's updated amount of medical supplies.
+     */
     public void setMedicalSupplyCount(int medicalSupplyCount)
     {
         this.medicalSupplyCount = this.medicalSupplyCount + medicalSupplyCount;

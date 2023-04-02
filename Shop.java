@@ -18,13 +18,14 @@ public class Shop
      */
     public Shop()
     {
-
+        this.playerMoneyCount = 0;
+        buyItems();
     }
 
     /**
      * This constructor sets the player's amount of money.
      *
-     * @param playerMoneyCount
+     * @param playerMoneyCount The amount of money the player has.
      */
     public Shop(int playerMoneyCount)
     {
@@ -47,12 +48,20 @@ public class Shop
         final int WAGONPARTPRICE = 10;
         final int MEDICALSUPPLYPRICE = 2;
 
+        // items that can be bough from the shop
         int item = 0;
+
+        //number of an item that the player is buying
         int amount = 0;
 
         while(item != 9)
         {
-            System.out.println("You can buy: \n 1: Food ($1 for 5 pounds) \n 2: Set of Clothing ($10 for one set) \n 3: Box of Bullets ($2 per box, 20 bullets per box) \n 4: Oxen ($20 each) \n 5: Extra Wagon Wheel ($10 each) \n 6 Extra Wagon Axle ($10 each) \n 7 Extra Wagon Tongue ($10 each) \n 8 Medical Supply Box ($2 each) \n Type '9' to exit");
+            // list of items that the player can buy from the Shop
+            System.out.println("You can buy: \n 1: Food ($1 for 5 pounds) \n 2: Set of Clothing ($10 for one set) " +
+                               "\n 3: Box of Bullets ($2 per box, 20 bullets per box) \n 4: Oxen ($20 each) \n 5: Extra " +
+                               "Wagon Wheel ($10 each) \n 6 Extra Wagon Axle ($10 each) \n 7 Extra Wagon Tongue ($10 each) " +
+                               "\n 8 Medical Supply Box ($2 each) \n Type '9' to exit");
+
             System.out.println("You have $" + playerMoneyCount);
             System.out.print("What item would you like to buy? ");
             item = in.nextInt();
@@ -61,7 +70,7 @@ public class Shop
 
             System.out.println("[========================================================================]");
 
-
+            // updates the amount of money the player has along with their inventory of items
             switch(item)
             {
                 case 1:
