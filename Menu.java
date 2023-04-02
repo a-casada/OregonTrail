@@ -1,15 +1,26 @@
 import java.util.Scanner;
 public class Menu {
+   //Variables
     private int pace;
     private int ration;
 
+    //Contructors
     public Menu() {
         this.pace = 0;
         this.ration = 0;
     } // default
 
-    /**
-     * Load Main Menu
+    /**Title Screen
+     * Sets title screen
+     */
+    public void titleScreen()
+    {
+        System.out.println("[========================================================================]");
+        System.out.println("░▀▀█▀▀░█░░░░█▀▀░░░▒█▀▀▀█░█▀▀▄░█▀▀░█▀▀▀░▄▀▀▄░█▀▀▄░░░▀▀█▀▀░█▀▀▄░█▀▀▄░▀█▀░█░░\n░░▒█░░░█▀▀█░█▀▀░░░▒█░░▒█░█▄▄▀░█▀▀░█░▀▄░█░░█░█░▒█░░░░▒█░░░█▄▄▀░█▄▄█░░█░░█░░\n░░▒█░░░▀░░▀░▀▀▀░░░▒█▄▄▄█░▀░▀▀░▀▀▀░▀▀▀▀░░▀▀░░▀░░▀░░░░▒█░░░▀░▀▀░▀░░▀░▀▀▀░▀▀▀\n By: A. Burkholder A. Casada, A. Guzman, and K. McClure ");
+        System.out.println("[========================================================================]");
+    }
+
+    /**Load Main Menu
      * Sets the display for the main menu, does NOT receive inputs or give outputs.
      *      1. Travel the trail
      *      2. Learn about the trail
@@ -17,13 +28,59 @@ public class Menu {
      *      4. Choose Management Options
      *      5. End
      */
-
     public void loadMainMenu()
     {
-        System.out.println("[========================================================================]");
-        System.out.println("░▀▀█▀▀░█░░░░█▀▀░░░▒█▀▀▀█░█▀▀▄░█▀▀░█▀▀▀░▄▀▀▄░█▀▀▄░░░▀▀█▀▀░█▀▀▄░█▀▀▄░▀█▀░█░░\n░░▒█░░░█▀▀█░█▀▀░░░▒█░░▒█░█▄▄▀░█▀▀░█░▀▄░█░░█░█░▒█░░░░▒█░░░█▄▄▀░█▄▄█░░█░░█░░\n░░▒█░░░▀░░▀░▀▀▀░░░▒█▄▄▄█░▀░▀▀░▀▀▀░▀▀▀▀░░▀▀░░▀░░▀░░░░▒█░░░▀░▀▀░▀░░▀░▀▀▀░▀▀▀\n By: A. Burkholder A. Casada, A. Guzman, and K. McClure ");
-        System.out.println("[========================================================================]");
+        Scanner userIn = new Scanner(System.in); //Set up Scanner
+        int userInput = 0;
+        do {
+            System.out.println("Main Menu: Choose from the options below to continue. \n" +
+                    "     *      1. Travel the trail\n" +
+                    "     *      2. Learn about the trail\n" +
+                    "     *      3. Learn about Hattie Campbell\n" +
+                    "     *      4. See the Oregon Top Ten\n" +
+                    "     *      5. Visit the Graveyard\n" +
+                    "     *      6. Choose Management Options\n");
+            System.out.println("[========================================================================]");
+            userInput = userIn.nextInt();
+            switch (userInput) {
+                case 1: {
+                    //Start the Oregon Trail
+                }
+                break;
+                case 2: {
+                    learnAboutTrail();
+                }
+                break;
+                case 3: {
+                    learnAboutHattie();
+                }
+                break;
+                case 4: {
+                    System.out.println("Reference the soon-to-be-made top 10 class and retrieve the list of top 10 pioneers");
+                    System.out.println("[========================================================================]");
+                }
+                break;
+                case 5: {
+                    System.out.println("Reference the gravestones list and tell the user where people died.");
+                    System.out.println("[========================================================================]");
+                }
+                break;
+                case 6: {
+                    System.out.println("Provide options to the user");
+                    System.out.println(" 1. Choose to reset the top 10 list to default");
+                    System.out.println(" 2. Choose to reset the gravestones to default");
+                    System.out.println(" 3. Change something aesthetic of the game.");
+                    System.out.println(" 4. IDK what other options we want.");
+                    System.out.println("[========================================================================]");
+                }
+                break;
+                default: {
+                }
+                break;
+            }
+        }while (userInput != 1);
     }
+
     /**
      * Intro about trail
      * Short intro before main menu.
@@ -33,13 +90,12 @@ public class Menu {
         System.out.println("About the Oregon Trail:" +
                 "\n The Oregon Trail was a legendary 2170 mile stretch of land from Independence, Missouri to Oregon City, Oregon." +
                 "\n This was no simple road trip for those who wanted to experience the west, and many people faced extreme hardships along the way." +
-                "\n\n Today you will be carving your own path on the trail, playing in the shoes of 13 year old Hattie Camblee." +
+                "\n\n Today you will be carving your own path on the trail, playing in the shoes of 13 year old Hattie Campbell." +
                 "\n Will you aid your family in making it to Oregon, or will you be one of the 20,000 individuals to lose their life on the trail?\n");
         System.out.println("[========================================================================]");
         continu();
     }
-    /**
-     * Learn about Trail
+    /**Learn about Trail
      * Displays the "Learn about the trail" text in main menu.
      */
 
@@ -59,46 +115,14 @@ public class Menu {
         continu();
     }
 
+    /**
+     * Learn about Hattie
+     * Displays a picture of Hattie Campbell.
+     */
     public void learnAboutHattie()
     {
-        System.out.println("@@@@@@@@@@@@@@&GYYYYY5555555Y?~:     ..::::^~7J55555YYYYYYYYYJJJ5B@@@@@@@@@@@@@@\n" +
-                "@@@@@@@@@@@@&B555555555555Y7.     ..:::^~!~~^::^^~7Y555YYYYYYYYYJYP#@@@@@@@@@@@@\n" +
-                "@@@@@@@@@@@#PY555555555P5!....::^^~~~!!!!!~~^^~~^:::!Y55YYYYYYYYYYJYG&@@@@@@@@@@\n" +
-                "@@@@@@@@@@B555555555555P7..:^!7???JJJJJJJ???77!~~^::..7PP55YYYYYYYYYJ5#@@@@@@@@@\n" +
-                "@@@@@@@@&BGPPP55555555PJ:.^7YY555PPPPPPP55YYYJ?7!!~:. 7GGP555YYYYYYYYY5#@@@@@@@@\n" +
-                "@@@@@@@&GPPPPPPPPPPPPPP!.^!JY55PPPPPPPPPP555YYYY??!^..~PPPPPP55555YY5555B@@@@@@@\n" +
-                "@@@@@@&GPPPPPPPPPPPPPPP7.~?Y55PPPPPPPPPP55555YYJ?!~^:.:YPP555PPPPPP555YY5B@@@@@@\n" +
-                "@@@@@&GPPPPPPPPPPPPPPPGJ:!YY55PPPPPPPPP55YYY55YJ!~^::. !PPPP55555555555555#@@@@@\n" +
-                "@@@@@GPPPPPPPPPPPPPPGGG7.!7??777J5P55Y?77?JJYJYY?~^:.. ^PGPPPPPPP5555555YY5#@@@@\n" +
-                "@@@@#GGGGPGGGGGGGGGGGGP^.7?!!!~!7YPPYJ?77~!7?YJYY7^:..^?PPPPPPPPPPPPPP55555P&@@@\n" +
-                "@@@&GGGGGGGGGGGGGGGGGGG?^?JJJJ?YYYP5YYY5Y???J5555J^:^~!YGPPPPPPPPPPPPPPPPPPPB@@@\n" +
-                "@@@BGGGGGPPPPGGGGGGGGGGP!7Y5PPPP5555YY5PPPPPP5YYYJ~^~77YPPPPPPPPPPPPPPPPPPPPP&@@\n" +
-                "@@&GGGPP55PPPPPGPPGGGGG5~!?Y55PPYYYJJY5PPPPP55YJ?7!~~7YPPPPPPPPPPPPPP55PPPPPPB@@\n" +
-                "@@BPPPP555PPPPPPPPPPPP5JYY7JY5PPYYYYY5PPPP555YJJ?777?YPPPP5555P5YYYYJJ5PP5PPPG&@\n" +
-                "@&G555555PPPPPPPPPPPPPPPGP??Y555YY5YY5555555YJJ??~?55555JJJJJP5J?????5PP55Y5PP#@\n" +
-                "@#5555555PPPPP5PPPPPPPPPPP5??YJ?777777?Y55YYYJ??7!JJJJJJJ???JJJ?77???5PPPJ~!YPB@\n" +
-                "@#5YYY555PPPPPPPPPP5555555PY??YJ??JJJJ5555YYJ????YJJ?JJJJJJ??J??????J5PPP7^^?PB@\n" +
-                "@BYYYYYY5555555555P555Y5555P5J?YY55PP5555YJ???JJJYJJ??JJJJJ??JJJ?????5PP5!^^JPP&\n" +
-                "@BYYYYYYYYYYYY5555555555555555YJJJJJJJ??777?JYYJYJJ??JJJJJJ??JJJJ????5PPP7:!P55&\n" +
-                "@BYYYJJJYYYYYYYYYYYYYYYYYYYYYYYYYJ!!!!77?JYY55555YYYPGPJ777!!!!!!7!!!7JY55Y5PY5&\n" +
-                "@BYJJJJJJJJJJJJJJJJJJJJJJJJJJJJJYY~!??JYYY555555PPGGPPPY777777!!!!!7!7!?55555YP@\n" +
-                "@#5555555555555555555555YYYJ?7JPPJ77?JJYY55PPGGGGPYJ?!~^^~!!7!!!77!!?7!J5PP55YG@\n" +
-                "@&G55555YYYYYJJJYYYYJJ?77!~~~~755YY??YPPPGGP5J??7~^^^~~~~^^^~7JJ?77~!J77J?JJJY#@\n" +
-                "@@BYYYYYYJJJJJJJ?!^~~^~^^~7JJY55YJ?J?J5P5?!~^^^~~~!!!!!!!~~~~^^^7?JJJJ?!777!!J&@\n" +
-                "@@&5Y55YYYYY55J!~^~!!!!~~JYYYYYYY5555Y?~^:^~!!!!!!!!!!!!!!!!!!!~~~!JJJ7!?YJ7!G@@\n" +
-                "@@@GYYYYYYYY5J~^~!!!!!^^J5YYYYYYYY5555J~~!!!!!!!!77!!!!!!!77777!!!~^~7??!777J&@@\n" +
-                "@@@&5JYYYYYY?~~!!!!~~^~J55555YYYY555Y?7?!!!!!!!!7!!!!!!!7!!77!7777!~~^^!7777G@@@\n" +
-                "@@@@BJJJYYY7~^~!~~^~^755555555555Y?~:.:^!!!!!!!!!!!!7!!!!!7!!7?7!!~~~~^~Y5YG@@@@\n" +
-                "@@@@@PJYYY7~~^^~^^^!J5555555555Y!^:^~!!!!!!!!!!!!!!!!~!!!!~!777!!7!~~^^^JY5&@@@@\n" +
-                "@@@@@&5JYJ~^^:^:^~75555555555Y7::~!!!!!!!!!!!!!!7!!!~!!!!~~77!!!!7!!~^^^!Y#@@@@@\n" +
-                "@@@@@@&5Y?^::..^!77?J555555Y7^.^!!!!!7!!!!!!!!7!!~!~!!~!~!77!!!!!!!!!~^:~B@@@@@@\n" +
-                "@@@@@@@&PJ~...~7!!777777?J?^.:!!!!!!!!!!!!!77!!!!!~~~~!^!7!!!!!!!!!!!~^!G@@@@@@@\n" +
-                "@@@@@@@@&G~..~!~!7777~^^^:..^!!!!!!!!!!!7!7!!!!!!~~^^!^~7!~!!!!!!!!!!~?#@@@@@@@@\n" +
-                "@@@@@@@@@@P~^~~!?777!~~~^..^!!!!!!!!!!!777~^^^~~~~^:~~^!!~~!~~!!!!!!!5&@@@@@@@@@\n" +
-                "@@@@@@@@@@@#Y7!!777~^^^^: :!!!!!!!!!7777!~~~~~~~~~::~:^!~~~!~~!!~~~?G@@@@@@@@@@@\n" +
-                "@@@@@@@@@@@@@BJ7!!~::::: .^!!!!!!!!7!7!!~!!~~~~~~^:^^:^~~~~~~~!~~75&@@@@@@@@@@@@\n" +
-                "@@@@@@@@@@@@@@&G?~^^~^^. :~~~~~~!!!!!!~~~~~~~~^^^::^^:~^~~~~^^~75#@@@@@@@@@@@@@@\n" +
-                "Above: Hattie Campbell on her 13th birthday, only weeks away from crossing the Oregon Trail");
+        System.out.println("Hattie Campbell is a 13 year old pioneers, traveling with her family of 4 and pet.\n"+
+                "She is cool.");
         continu();
     }
     /**
@@ -214,8 +238,24 @@ public class Menu {
 
     }
 
+    /**
+     * Sets Names
+     * Sets the inital names for the game.
+     */
+    public String[] setNames()
+    {
+        String names[] = new String[4];
+        Scanner in = new Scanner(System.in);
+        System.out.println("What are the names of yourself (1), your three family members (2, 3), and your pet (4)?");
+        for(int i = 0; i <names.length; i++)
+        {
+            System.out.print("(" + (i+1) + ")");
+            names[i] = in.nextLine();
+        }
+        System.out.println("[========================================================================]");
 
-
+        return names;
+    }
     /**
      * initial Cash
      * Displays the "Here is your initial cash" Screen:
@@ -235,7 +275,7 @@ public class Menu {
                 "\n Wagon Wheel - For Repairs, Trades, or Sale" +
                 "\n Wagon Axle - For Repairs, Trades, or Sale" +
                 "\n Wagon Tongue -  For Repairs, Trades, or Sale" +
-                "\n Medical Supply Box - For healing the diseased and preventing death" + "\n   (Press 1 to continue to the shop)");
+                "\n Medical Supply Box - For healing the diseased and preventing death";
         System.out.println("[=========================================================================]");
         continu();
     }
@@ -255,6 +295,7 @@ public class Menu {
             input =  inContinu.nextInt();                  //gets next integer input as input.
             validinput = input == 0;
         }while(!validinput);
+        System.out.println("[========================================================================]");
     }
 
 
