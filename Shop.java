@@ -12,25 +12,17 @@ public class Shop
     private int wagonTonguePurchased = 0;
     private int medicalSupplyPurchased = 0;
     private int moneyUsed = 0;
+    private Inventory inv;
 
     /**
      * Default constructor for the Shop class.
-     */
-    public Shop()
-    {
-        this.playerMoneyCount = 0;
-        buyItems();
-    }
-
-    /**
-     * This constructor sets the player's amount of money.
      *
      * @param playerMoneyCount The amount of money the player has.
      */
-    public Shop(int playerMoneyCount)
+    public Shop(Inventory inv, int playerMoneyCount)
     {
+        this.inv = inv;
         this.playerMoneyCount = playerMoneyCount;
-        buyItems();
     }
 
     /**
@@ -62,11 +54,17 @@ public class Shop
                                "Wagon Wheel ($10 each) \n 6 Extra Wagon Axle ($10 each) \n 7 Extra Wagon Tongue ($10 each) " +
                                "\n 8 Medical Supply Box ($2 each) \n Type '9' to exit");
 
-            System.out.println("You have $" + playerMoneyCount);
+
+
+            System.out.println("You have $" + (playerMoneyCount - moneyUsed));
             System.out.print("What item would you like to buy? ");
             item = in.nextInt();
-            System.out.print("How many of this item do you want? ");
-            amount = in.nextInt();
+
+            if(item !=9)
+            {
+                System.out.print("How many of this item do you want? ");
+                amount = in.nextInt();
+            }
 
             System.out.println("[========================================================================]");
 
@@ -150,26 +148,23 @@ public class Shop
      */
     public void resetItems()
     {
-        Inventory player = new Inventory();
-
         if (playerMoneyCount >= moneyUsed)
         {
-            player.setPlayerMoneyCount(playerMoneyCount - moneyUsed);
-            player.setFoodCount(foodPurchased * 5);
-            player.setClothingCount(clothingPurchased);
-            player.setBulletsCount(bulletsBoxPurchased * 20);
-            player.setOxenCount(oxenPurchased);
-            player.setWagonWheelCount(wagonWheelPurchased);
-            player.setWagonAxleCount(wagonAxlePurchased);
-            player.setWagonTongueCount(wagonTonguePurchased);
-            player.setMedicalSupplyCount(medicalSupplyPurchased);
+            inv.setPlayerMoneyCount(playerMoneyCount - moneyUsed);
+            inv.setFoodCount(foodPurchased * 5);
+            inv.setClothingCount(clothingPurchased);
+            inv.setBulletsCount(bulletsBoxPurchased * 20);
+            inv.setOxenCount(oxenPurchased);
+            inv.setWagonWheelCount(wagonWheelPurchased);
+            inv.setWagonAxleCount(wagonAxlePurchased);
+            inv.setWagonTongueCount(wagonTonguePurchased);
+            inv.setMedicalSupplyCount(medicalSupplyPurchased);
         }
         else
         {
-            player.setPlayerMoneyCount(playerMoneyCount);
+            inv.setPlayerMoneyCount(playerMoneyCount);
             System.out.println("You do not have enough money!");
             System.out.println("Get out of my shop!!!");
         }
-
     }
 }

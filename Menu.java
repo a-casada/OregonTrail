@@ -63,6 +63,8 @@ public class Menu {
 
     }
 
+
+
     /**
      * setStartDate
      * Displays the date selection screen.
@@ -183,7 +185,6 @@ public class Menu {
                 "\n Wagon Tongue -  For Repairs, Trades, or Sale" +
                 "\n Medical Supply Box - For healing the diseased and preventing death" + "\n   (Press 1 to continue to the shop)");
 
-        System.out.println("[=========================================================================]");
         Scanner in = new Scanner(System.in);    //Set up Scanner
         int input = 0;                          //initialize input
         input =  in.nextInt();                  //gets next integer input as input.
@@ -191,6 +192,7 @@ public class Menu {
                 do {
                     validinput = input == 1;
                 }while(!validinput);
+        System.out.println("[=========================================================================]");
     }
 
 
