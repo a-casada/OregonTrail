@@ -8,7 +8,6 @@ public class Main {
         screen1.learnAboutTrail();
         screen1.startDate();
         screen1.initialCash(inv.getPlayerMoneyCount());
-
         inv.goToShop();
     }
 }
