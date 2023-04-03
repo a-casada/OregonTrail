@@ -120,20 +120,46 @@ public class Date {
      * @param numDays The number of days passed
      * */
     public void setDate(int numDays) {
+
+        if (this.date[1] == 0){
+            this.date[1] = 1;
+        }
+        if (this.date[1] == 14){
+            this.date[2]++;
+            this.date[1] = 1;
+        }
         this.date[0] = this.date[0] + numDays;
 
         boolean bigDay;
-        if (date[0]>31 && date[1]%2 == 1){bigDay = true;}
-        else if (date[0]>28 && date[1] == 2){bigDay = true;}
-        else if (date[0]>30 && date[1]%2 == 0){bigDay = true;}
+        if (date[1] == 2 && date[0] > 28){bigDay = true;}
+        else if (date[1] > 7) {
+            if (date[0]>31 && date[1]%2 == 0){bigDay = true;}
+            else if (date[0] > 30 && date[1] % 2 == 1) {bigDay = true;}
+            else bigDay = false;
+        }
+        else if (date[1] <= 7) {
+            if (date[0]>31 && date[1]%2 == 1){bigDay = true;}
+            else if (date[0] > 30 && date[1] % 2 == 0) {bigDay = true;}
+            else bigDay = false;
+        }
         else bigDay = false;
+
+
         while (bigDay){
             if (date[1]==2)
                 date[0] = date[0]-28;
-            else if (date[1] % 2 == 1)
+            else if(date[1] > 7){
+                if (date[1] % 2 == 0)
                 date[0] = date[0]-31;
-            else if (date[1] % 2 == 0)
+                else if (date[1] % 2 == 1)
                 date[0] = date[0]-30;
+            }
+            else if (date[1] <=7) {
+                if (date[1] % 2 == 1)
+                    date[0] = date[0]-31;
+                else if (date[1] % 2 == 0)
+                    date[0] = date[0]-30;
+            }
             date[1]++;
             if (date[0]>31 && date[1]%2 == 1){bigDay = true;}
             else if (date[0]>28 && date[1] == 2){bigDay = true;}
@@ -150,10 +176,10 @@ public class Date {
         int newWeather = rand.nextInt(100);
         if (newWeather>49){
             int chance = rand.nextInt(100);
-            if (newWeather>85 && chance < rainChance[climateZone][date[1]]){
+            if (newWeather>85 && chance < rainChance[climateZone][date[1]-1]){
                 currentWeather = "Heavy rain";
             }
-            else if (chance < rainChance[climateZone][date[1]]) {
+            else if (chance < rainChance[climateZone][date[1]-1]) {
                 currentWeather = "Rain";
             }
             else currentWeather = "Clear";
@@ -178,7 +204,7 @@ public class Date {
      * */
     public void setTemp(int climateZone) {
         int dtemp = rand.nextInt(-20, 20);
-        currentTemp = avgTemps[climateZone][date[1]]+ dtemp;
+        currentTemp = avgTemps[climateZone][date[1]-1]+ dtemp;
     }
 
     /**setGrass(int climateZone)

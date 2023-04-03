@@ -22,6 +22,7 @@ public class Main {
         //change aesthetics
         //Game Begins
         menu.setNames();
+
         // Short reminder about how the game works (distane, # of travelers, etc.)
         screen1.startDate();    //Ask When they will set off (with blurb about how that effects the trail)
         //Ask for social rank / starting cash (poor, rich, president)
@@ -86,6 +87,9 @@ public class Main {
 
             // increment distance to next location
             map.getDistToLM();
+
+            System.out.println(date.toString());
+
 
             System.out.println("[========================================================================]");
         }
