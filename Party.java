@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -136,8 +137,29 @@ public class Party
         }
 
         // negative because the people will use food each day and each individual eats 3 pounds a day
-        inv.setFoodCount(-1*counter*3);
+        if (inv.getFoodCount() > 0)
+        {
+            inv.setFoodCount(-1*counter*3);
+        }
+        else if (inv.getFoodCount() == 0)
+        {
+            Random rand = new Random();
+
+            int player = 0;
+
+            player = rand.nextInt(0, 6);
+
+            health[player] = health[player] - 10;
+
+            if(health[player] <= 0)
+            {
+                isAlive[player] = false;
+            }
+        }
+        else
+        {
+            inv.setFoodCount(0);
+        }
 
     }
-
 }
