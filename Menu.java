@@ -33,41 +33,38 @@ public class Menu {
         Scanner userIn = new Scanner(System.in); //Set up Scanner
         int userInput = 0;
         do {
-            System.out.println("Main Menu: Choose from the options below to continue. \n" +
-                    "     *      1. Travel the trail\n" +
-                    "     *      2. Learn about the trail\n" +
-                    "     *      3. Learn about Hattie Campbell\n" +
-                    "     *      4. See the Oregon Top Ten\n" +
-                    "     *      5. Visit the Graveyard\n" +
-                    "     *      6. Choose Management Options\n");
+            System.out.println("""
+                    Main Menu: Choose from the options below to continue.\s
+                         *      1. Travel the trail
+                         *      2. Learn about the trail
+                         *      3. Learn about Hattie Campbell
+                         *      4. See the Oregon Top Ten
+                         *      5. Visit the Graveyard
+                         *      6. Choose Management Options
+                    """);
             System.out.println("[========================================================================]");
             userInput = userIn.nextInt();
             switch (userInput) {
-                case 1: {
+                case 1 -> {
                     //Start the Oregon Trail
                 }
-                break;
-                case 2: {
+                case 2 -> {
                     learnAboutTrail();
                 }
-                break;
-                case 3: {
+                case 3 -> {
                     learnAboutHattie();
                 }
-                break;
-                case 4: {
+                case 4 -> {
                     System.out.println("Reference the soon-to-be-made top 10 class and retrieve the list of top 10 pioneers");
                     System.out.println("[========================================================================]");
                     continu();
                 }
-                break;
-                case 5: {
+                case 5 -> {
                     System.out.println("Reference the gravestones list and tell the user where people died.");
                     System.out.println("[========================================================================]");
                     continu();
                 }
-                break;
-                case 6: {
+                case 6 -> {
                     System.out.println("Provide options to the user");
                     System.out.println(" 1. Choose to reset the top 10 list to default");
                     System.out.println(" 2. Choose to reset the gravestones to default");
@@ -76,10 +73,8 @@ public class Menu {
                     System.out.println("[========================================================================]");
                     continu();
                 }
-                break;
-                default: {
+                default -> {
                 }
-                break;
             }
         }while (userInput != 1);
     }
@@ -90,11 +85,14 @@ public class Menu {
      */
     public void introAboutTrail()
     {
-        System.out.println("About the Oregon Trail:" +
-                "\n The Oregon Trail was a legendary 2170 mile stretch of land from Independence, Missouri to Oregon City, Oregon." +
-                "\n This was no simple road trip for those who wanted to experience the west, and many people faced extreme hardships along the way." +
-                "\n\n Today you will be carving your own path on the trail, playing in the shoes of 13 year old Hattie Campbell." +
-                "\n Will you aid your family in making it to Oregon, or will you be one of the 20,000 individuals to lose their life on the trail?\n");
+        System.out.println("""
+                About the Oregon Trail:
+                 The Oregon Trail was a legendary 2170 mile stretch of land from Independence, Missouri to Oregon City, Oregon.
+                 This was no simple road trip for those who wanted to experience the west, and many people faced extreme hardships along the way.
+
+                 Today you will be carving your own path on the trail, playing in the shoes of 13 year old Hattie Campbell.
+                 Will you aid your family in making it to Oregon, or will you be one of the 20,000 individuals to lose their life on the trail?
+                """);
         System.out.println("[========================================================================]");
         continu();
     }
@@ -104,16 +102,17 @@ public class Menu {
 
     public void learnAboutTrail()
     {
-        System.out.println("About the Oregon Trail:" +
-                "\n The Oregon Trail was a legendary 2170 mile stretch of land from Independence, Missouri to Oregon City, Oregon." +
-                "\n In the early 1800s, the trail was utilized by fur traders, only traveling the tail on horseback." +
-                "\n By 1836, wagon trains from Independence, Missouri began clearing the trail to Oregon. " +
-                "\n As the years went on, roads, bridges, and ferries were built to speed up the journey. " +
-                "\n In the 1840's, the Organic Laws of Oregon promised free land to any settlers who chose to move to Oregon." +
-                "\n The term \"Manifest Destiny\" was coined to describe the thousands of families who traveled the trails, inspired by that very promise. " +
-                "\n Many other families were inspired by the California Gold rush in 1948, inspired from the promise of riches." +
-                "\n By the 1860's, many were traveling on ferries, with rivers and canals bring created to aid the pioneers." +
-                "\n Finally, in 1869, the transcontinental railroad was completed, leading many to chose it over the trail.");
+        System.out.println("""
+                About the Oregon Trail:
+                 The Oregon Trail was a legendary 2170 mile stretch of land from Independence, Missouri to Oregon City, Oregon.
+                 In the early 1800s, the trail was utilized by fur traders, only traveling the tail on horseback.
+                 By 1836, wagon trains from Independence, Missouri began clearing the trail to Oregon.\s
+                 As the years went on, roads, bridges, and ferries were built to speed up the journey.\s
+                 In the 1840's, the Organic Laws of Oregon promised free land to any settlers who chose to move to Oregon.
+                 The term "Manifest Destiny" was coined to describe the thousands of families who traveled the trails, inspired by that very promise.\s
+                 Many other families were inspired by the California Gold rush in 1948, inspired from the promise of riches.
+                 By the 1860's, many were traveling on ferries, with rivers and canals bring created to aid the pioneers.
+                 Finally, in 1869, the transcontinental railroad was completed, leading many to chose it over the trail.""");
         System.out.println("[========================================================================]");
         continu();
     }
