@@ -58,11 +58,13 @@ public class Menu {
                 case 4: {
                     System.out.println("Reference the soon-to-be-made top 10 class and retrieve the list of top 10 pioneers");
                     System.out.println("[========================================================================]");
+                    continu();
                 }
                 break;
                 case 5: {
                     System.out.println("Reference the gravestones list and tell the user where people died.");
                     System.out.println("[========================================================================]");
+                    continu();
                 }
                 break;
                 case 6: {
@@ -72,6 +74,7 @@ public class Menu {
                     System.out.println(" 3. Change something aesthetic of the game.");
                     System.out.println(" 4. IDK what other options we want.");
                     System.out.println("[========================================================================]");
+                    continu();
                 }
                 break;
                 default: {
@@ -125,6 +128,7 @@ public class Menu {
                 "She is cool.");
         continu();
     }
+
     /**
      * See Top Ten
      * Displays the top ten expeditions on the menu, both names and scores.
@@ -186,7 +190,7 @@ public class Menu {
 
         date[0] = 1;    //Set day
         date[1] = 4;    //Set initial month in case of error
-        date[2] = 1860; //Set Year
+        date[2] = 1843; //Set Year
         do {
             switch (input) {
                 case 1: {
@@ -235,7 +239,6 @@ public class Menu {
         System.out.println("\nYour journey shall begin on " + date[1] + "-" + date[0] + "-" + date[2] + ".\n[=========================================================================]");
         continu();
         return date;
-
     }
 
     /**
@@ -244,18 +247,20 @@ public class Menu {
      */
     public String[] setNames()
     {
-        String names[] = new String[4];
+        String names[] = new String[5];
+        names[0] = "Hattie";
         Scanner in = new Scanner(System.in);
-        System.out.println("What are the names of yourself (1), your three family members (2, 3), and your pet (4)?");
-        for(int i = 0; i <names.length; i++)
+        System.out.println("What are the names of your three family members (1, 2, 3) and your pet (4)?");
+        for(int i = 1; i <names.length; i++)
         {
-            System.out.print("(" + (i+1) + ")");
+            System.out.print("(" + (i) + ")");
             names[i] = in.nextLine();
         }
         System.out.println("[========================================================================]");
 
         return names;
     }
+
     /**
      * initial Cash
      * Displays the "Here is your initial cash" Screen:
@@ -279,7 +284,6 @@ public class Menu {
         System.out.println("[=========================================================================]");
         continu();
     }
-
 
     /**Continue Class
      * Adds: "submit "0" to continue"
