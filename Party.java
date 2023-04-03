@@ -147,13 +147,14 @@ public class Party
 
             int player = 0;
 
-            player = rand.nextInt(0, 6);
+            player = rand.nextInt(0, 5);
 
-            health[player] = health[player] - 10;
+            health[player] = health[player] - 20;
 
             if(health[player] <= 0)
             {
                 isAlive[player] = false;
+                System.out.println(names[player] + " is dead!");
             }
         }
         else
