@@ -56,11 +56,20 @@ public class Main {
         {
             map.progressBar();
 
+            //increment date by 1
+            date.setDate(1);
+
+
+
+            // increment weather / terrian if needed
+            map.setClimateZone();
+            date.setWeather(map.getClimate());
+            date.setTemp(map.getClimate());
+            date.setGrass(map.getClimate());
 
 
 
 
-        
 
 
 
@@ -75,8 +84,14 @@ public class Main {
                 map.setPosition(10);
             };
 
+            // increment distance to next location
+            map.getDistToLM();
+
             System.out.println("[========================================================================]");
         }
+
+        
+
 
 
     }
