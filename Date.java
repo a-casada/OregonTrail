@@ -124,7 +124,7 @@ public class Date {
         if (this.date[1] == 0){
             this.date[1] = 1;
         }
-        if (this.date[1] == 14){
+        if (this.date[1] == 12){
             this.date[2]++;
             this.date[1] = 1;
         }
