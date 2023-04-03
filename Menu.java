@@ -8,17 +8,60 @@ public class Menu {
         this.ration = 0;
     } // default
 
-    /**
-     * Load Main Menu
-     * Sets the display for the main menu, does NOT receive inputs or give outputs.
-     *      1. Travel the trail
-     *      2. Learn about the trail
-     *      3. See the Oregon Top Ten
-     *      4. Choose Management Options
-     *      5. End
-     */
-
     public void loadMainMenu()
+    {
+        Scanner userIn = new Scanner(System.in); //Set up Scanner
+        int userInput = 0;
+        do {
+            System.out.println("Main Menu: Choose from the options below to continue. \n" +
+                    "     *      1. Travel the trail\n" +
+                    "     *      2. Learn about the trail\n" +
+                    "     *      3. Learn about Hattie Campbell\n" +
+                    "     *      4. See the Oregon Top Ten\n" +
+                    "     *      5. Visit the Graveyard\n" +
+                    "     *      6. Choose Management Options\n");
+            System.out.println("[========================================================================]");
+            userInput = userIn.nextInt();
+            switch (userInput) {
+                case 1: {
+                    //Start the Oregon Trail
+                }
+                break;
+                case 2: {
+                    learnAboutTrail();
+                }
+                break;
+                case 3: {
+                    learnAboutHattie();
+                }
+                break;
+                case 4: {
+                    System.out.println("Reference the soon-to-be-made top 10 class and retrieve the list of top 10 pioneers");
+                    System.out.println("[========================================================================]");
+                }
+                break;
+                case 5: {
+                    System.out.println("Reference the gravestones list and tell the user where people died.");
+                    System.out.println("[========================================================================]");
+                }
+                break;
+                case 6: {
+                    System.out.println("Provide options to the user");
+                    System.out.println(" 1. Choose to reset the top 10 list to default");
+                    System.out.println(" 2. Choose to reset the gravestones to default");
+                    System.out.println(" 3. Change something aesthetic of the game.");
+                    System.out.println(" 4. IDK what other options we want.");
+                    System.out.println("[========================================================================]");
+                }
+                break;
+                default: {
+                }
+                break;
+            }
+        }while (userInput != 1);
+    }
+
+    public void titleScreen()
     {
         System.out.println("[========================================================================]");
         System.out.println("░▀▀█▀▀░█░░░░█▀▀░░░▒█▀▀▀█░█▀▀▄░█▀▀░█▀▀▀░▄▀▀▄░█▀▀▄░░░▀▀█▀▀░█▀▀▄░█▀▀▄░▀█▀░█░░\n░░▒█░░░█▀▀█░█▀▀░░░▒█░░▒█░█▄▄▀░█▀▀░█░▀▄░█░░█░█░▒█░░░░▒█░░░█▄▄▀░█▄▄█░░█░░█░░\n░░▒█░░░▀░░▀░▀▀▀░░░▒█▄▄▄█░▀░▀▀░▀▀▀░▀▀▀▀░░▀▀░░▀░░▀░░░░▒█░░░▀░▀▀░▀░░▀░▀▀▀░▀▀▀");
@@ -32,8 +75,44 @@ public class Menu {
 
     public void learnAboutTrail()
     {
-        System.out.println("About the Oregon Trail:\nThe Oregon Trail was a legendary 2170 mile stretch of land from Independence, Missouri to Oregon City, Oregon.\nThis was no simple road trip for those who wanted to experience the west, and many people faced extreme hardships along the way.\nToday you will be creating a story for your player who could be one of the 20,000 individuals to lose their life on the trail!\n");
+        System.out.println("About the Oregon Trail:" +
+                "\n The Oregon Trail was a legendary 2170 mile stretch of land from Independence, Missouri to Oregon City, Oregon." +
+                "\n In the early 1800s, the trail was utilized by fur traders, only traveling the tail on horseback." +
+                "\n By 1836, wagon trains from Independence, Missouri began clearing the trail to Oregon. " +
+                "\n As the years went on, roads, bridges, and ferries were built to speed up the journey. " +
+                "\n In the 1840's, the Organic Laws of Oregon promised free land to any settlers who chose to move to Oregon." +
+                "\n The term \"Manifest Destiny\" was coined to describe the thousands of families who traveled the trails, inspired by that very promise. " +
+                "\n Many other families were inspired by the California Gold rush in 1948, inspired from the promise of riches." +
+                "\n By the 1860's, many were traveling on ferries, with rivers and canals bring created to aid the pioneers." +
+                "\n Finally, in 1869, the transcontinental railroad was completed, leading many to chose it over the trail.");
         System.out.println("[========================================================================]");
+        continu();
+    }
+
+    /**
+     * Intro about trail
+     * Short intro before main menu.
+     */
+    public void introAboutTrail()
+    {
+        System.out.println("About the Oregon Trail:" +
+                "\n The Oregon Trail was a legendary 2170 mile stretch of land from Independence, Missouri to Oregon City, Oregon." +
+                "\n This was no simple road trip for those who wanted to experience the west, and many people faced extreme hardships along the way." +
+                "\n\n Today you will be carving your own path on the trail, playing in the shoes of 13 year old Hattie Campbell." +
+                "\n Will you aid your family in making it to Oregon, or will you be one of the 20,000 individuals to lose their life on the trail?\n");
+        System.out.println("[========================================================================]");
+        continu();
+    }
+
+    /**
+     * Learn about Hattie
+     * Displays a picture of Hattie Campbell.
+     */
+    public void learnAboutHattie()
+    {
+        System.out.println("Hattie Campbell is a 13 year old pioneers, traveling with her family of 4 and pet.\n"+
+                "She is cool.");
+        continu();
     }
 
     /**
@@ -194,6 +273,23 @@ public class Menu {
                     validinput = input == 1;
                 }while(!validinput);
         System.out.println("[=========================================================================]");
+    }
+
+    /**Continue Class
+     * Adds: "submit "0" to continue"
+     * Once zero is submitted, code finishes.
+     */
+    public void continu()
+    {
+        System.out.println("    Submit \"0\" to continue.");
+        Scanner inContinu = new Scanner(System.in);    //Set up Scanner
+        int input = 99;                          //initialize input
+        boolean validinput = false;             //sets up toggleable variable
+        do {
+            input =  inContinu.nextInt();                  //gets next integer input as input.
+            validinput = input == 0;
+        }while(!validinput);
+        System.out.println("[========================================================================]");
     }
 
 
