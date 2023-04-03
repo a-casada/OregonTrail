@@ -70,6 +70,13 @@ public class Main {
 
 
 
+            /*
+
+            PUT SOMETHING HERE IN ORDER TO GIVE THE PLAYER
+            CHOICES TO DO FOR EACH DAY
+            !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+             */
 
 
 
@@ -94,7 +101,16 @@ public class Main {
             System.out.println("[========================================================================]");
         }
 
-        
+        if (map.getPosition() >= 250 && !party.getGameOverStatus())
+        {
+            System.out.println("YOU HAVE MADE IT TO THE FIRST FORT!!!");
+            System.out.println("[========================================================================]");
+        }
+        else
+        {
+            System.out.println("YOU HAVE DIED AND DID NOT MAKE IT TO OREGON CITY!!!");
+            System.out.println("[========================================================================]");
+        }
 
 
 
