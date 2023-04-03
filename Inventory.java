@@ -239,4 +239,11 @@ public class Inventory
     {
         this.medicalSupplyCount = this.medicalSupplyCount + medicalSupplyCount;
     }
+
+    public void getAllItems()
+    {
+        System.out.println("Your Items: \nPounds of Food = " + foodCount + "\nClothingSets = " + clothingCount + "\nNumber of Bullets = "
+                + bulletsCount + "\nNumber of Oxen = " + oxenCount + "\nNumber of Wagon Wheels = " + wagonWheelCount + "\nNumber of Wagon Axels = "
+                + wagonAxleCount +"\nNumber of Wagon Tongues = " + wagonTongueCount +"\nNumber of Medical Supplies = " + medicalSupplyCount);
+    }
 }

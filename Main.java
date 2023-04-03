@@ -7,7 +7,7 @@ public class Main {
         Shop shop = new Shop(inv, inv.getPlayerMoneyCount());
         Map map = new Map();
         Date date = new Date();
-        Menu menu = new Menu();
+        Menu menu = new Menu(inv);
         Party party = new Party();
 
         //Programs Goes through title screen and main menu items
@@ -49,8 +49,7 @@ public class Main {
         //
         //Exit gameplay loop and return to main menu
 
-        System.out.println(inv.getOxenCount());
-        System.out.println(inv.getPlayerMoneyCount());
+
 
         while((map.getPosition() <  250) && !party.getGameOverStatus())
         {
@@ -75,8 +74,14 @@ public class Main {
             CHOICES TO DO FOR EACH DAY
             !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+            1. Continue on the trail
+            2. Check your supplies
+
+
              */
 
+            // the player's daily choices in the game
+            menu.playerDailyChoices();
 
 
 
