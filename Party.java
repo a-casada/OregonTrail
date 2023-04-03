@@ -14,16 +14,17 @@ public class Party
     private String difficulty[] = {"Easy", "Medium", "Hard", "Hardcore"};
     private String currentDifficulty = "Easy";
     private String names[] = new String[5]; // five people and the pet
-    private int health[] = new int[5]; // health out of 100
+    private int health[] = {100, 100, 100, 100, 100};
     private boolean isAlive[] = {true, true, true, true, true};
     private boolean gameOver = false;
+    private Inventory inv;
 
     /**
      * Default constructor for the Inventory class.
      */
-    public Party()
+    public Party(Inventory inv)
     {
-
+        this.inv = inv;
     }
 
     /**
@@ -120,6 +121,23 @@ public class Party
     public void setIsAliveStatus(boolean isAlive[])
     {
         this.isAlive = isAlive;
+    }
+
+    public void dailyFoodUsed()
+    {
+        int counter = 0;
+
+        for(boolean needsFood : isAlive)
+        {
+            if(needsFood)
+            {
+                counter++;
+            }
+        }
+
+        // negative because the people will use food each day and each individual eats 3 pounds a day
+        inv.setFoodCount(-1*counter*3);
+
     }
 
 }

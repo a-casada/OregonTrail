@@ -8,7 +8,7 @@ public class Main {
         Map map = new Map();
         Date date = new Date();
         Menu menu = new Menu(inv);
-        Party party = new Party();
+        Party party = new Party(inv);
 
         //Programs Goes through title screen and main menu items
         screen1.titleScreen(); //load title screen + opening credits
@@ -65,7 +65,7 @@ public class Main {
             date.setWeather(map.getClimate());
             date.setTemp(map.getClimate());
             date.setGrass(map.getClimate());
-
+            party.dailyFoodUsed();
 
 
             /*
