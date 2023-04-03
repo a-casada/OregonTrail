@@ -82,7 +82,6 @@ public class Party
         return gameOver;
     }
 
-
     /**
      * Sets the games current difficulty level.
      *
