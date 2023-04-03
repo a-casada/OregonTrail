@@ -15,7 +15,7 @@ public class Party
     private String currentDifficulty = "Easy";
     private String names[] = new String[5]; // five people and the pet
     private int health[] = new int[5]; // health out of 100
-    private boolean isAlive[] = new boolean[5];
+    private boolean isAlive[] = {true, true, true, true, true};
     private boolean gameOver = false;
 
     /**

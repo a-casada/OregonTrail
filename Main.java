@@ -9,10 +9,12 @@ public class Main {
         Date date = new Date();
         Menu menu = new Menu();
         Party party = new Party();
+
         //Programs Goes through title screen and main menu items
-        screen1.loadMainMenu(); //load title screen + opening credits
+        screen1.titleScreen(); //load title screen + opening credits
         //load main menu
-        screen1.learnAboutTrail(); // output history about trail
+        screen1.introAboutTrail(); // output history about trail
+        screen1.loadMainMenu();
         // show top scores
         // options / management program
         //reset top 10 scores

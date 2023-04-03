@@ -63,8 +63,8 @@ public class Shop
             // list of items that the player can buy from the Shop
             System.out.println("You can buy: \n 1: Food ($1 for 5 pounds) \n 2: Set of Clothing ($10 for one set) " +
                                "\n 3: Box of Bullets ($2 per box, 20 bullets per box) \n 4: Oxen ($20 each) \n 5: Extra " +
-                               "Wagon Wheel ($10 each) \n 6 Extra Wagon Axle ($10 each) \n 7 Extra Wagon Tongue ($10 each) " +
-                               "\n 8 Medical Supply Box ($2 each) \n Type '9' to exit");
+                               "Wagon Wheel ($10 each) \n 6: Extra Wagon Axle ($10 each) \n 7: Extra Wagon Tongue ($10 each) " +
+                               "\n 8: Medical Supply Box ($2 each) \n Type '9' to exit");
 
 
 
