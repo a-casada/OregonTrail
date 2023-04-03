@@ -1,5 +1,16 @@
 import java.util.Scanner;
 
+/**
+ * Programming 2 Oregon Trail Project
+ * @author Alexander Casada
+ * @since March 28, 2023
+ *
+ * Description: This java Shop class allows the player of the
+ * Oregon Trail game to buy items for their journey on the Oregon
+ * Trail. This class also gets the users item type and amount in
+ * order to update the player's inventory.
+ */
+
 public class Shop
 {
     private int playerMoneyCount = 0;
@@ -15,8 +26,9 @@ public class Shop
     private Inventory inv;
 
     /**
-     * Default constructor for the Shop class.
+     * Constructor for the Shop class.
      *
+     * @param inv Inventory object used to update the player's inventory.
      * @param playerMoneyCount The amount of money the player has.
      */
     public Shop(Inventory inv, int playerMoneyCount)

@@ -46,11 +46,10 @@ public class Main {
         //
         //Exit gameplay loop and return to main menu
 
-        System.out.println("KEEEEFFER");
         System.out.println(inv.getOxenCount());
         System.out.println(inv.getPlayerMoneyCount());
 
-        while((map.getPosition() <  250) && inv.isWagonUsable())
+        while((map.getPosition() <  250))
         {
             map.progressBar();
 
@@ -65,7 +64,11 @@ public class Main {
 
 
             // 10 miles travelled per day
-            map.setPosition(10);
+            if(inv.isWagonUsable())
+            {
+                map.setPosition(10);
+            };
+
             System.out.println("[========================================================================]");
         }
     }
