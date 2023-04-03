@@ -57,7 +57,7 @@ public class Main {
             map.progressBar();
 
 
-
+        
 
 
 
@@ -74,6 +74,5 @@ public class Main {
 
             System.out.println("[========================================================================]");
         }
-
     }
 }
