@@ -17,7 +17,6 @@ public class Party
     private int health[] = new int[5]; // health out of 100
     private boolean isAlive[] = new boolean[5];
     private boolean gameOver = false;
-    private boolean wonGame = false;
 
     /**
      * Default constructor for the Inventory class.
@@ -63,6 +62,24 @@ public class Party
     public boolean[] getIsAliveStatus()
     {
         return isAlive;
+    }
+
+    /**
+     * Gets the status of the game whether it is over or not.
+     *
+     * @return False if all the players are living and true if they are all dead.
+     */
+    public boolean getGameOverStatus()
+    {
+        if(isAlive[0] || isAlive[1] || isAlive[2] || isAlive[3] || isAlive[4])
+        {
+            gameOver = false;
+        }
+        else
+        {
+            gameOver = true;
+        }
+        return gameOver;
     }
 
 
