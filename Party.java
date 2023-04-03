@@ -147,7 +147,11 @@ public class Party
 
             int player = 0;
 
-            player = rand.nextInt(5);
+            do
+            {
+                player = rand.nextInt(5);
+
+            }while(!isAlive[player]);
 
             health[player] = health[player] - 20;
 
@@ -162,5 +166,16 @@ public class Party
             inv.setFoodCount(0);
         }
 
+    }
+
+    public void printAllPeoplesHealth()
+    {
+        for(int i = 0; i < names.length; i++)
+        {
+            if(health[i] > 0)
+            {
+                System.out.println(names[i] + " has a health of " + health[i] + ".");
+            }
+        }
     }
 }

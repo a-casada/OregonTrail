@@ -55,15 +55,19 @@ public class Main {
         {
             map.progressBar();
 
-            date.setDate(1); // date not working
-            date.printDate();
+            date.setDate(1); // should increment the date, not working
+            date.printDate(); // prints out the current date
 
+            // prints out the players health
+            party.printAllPeoplesHealth();
 
             // increment weather / terrian if needed
             map.setClimateZone();
             date.setWeather(map.getClimate());
             date.setTemp(map.getClimate());
             date.setGrass(map.getClimate());
+
+            // calculates the players food use
             party.dailyFoodUsed();
 
             int temp = 1;
