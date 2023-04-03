@@ -7,8 +7,9 @@ public class Main {
         Shop shop = new Shop(inv, inv.getPlayerMoneyCount());
         Map map = new Map();
         Date date = new Date();
-        Menu menu = new Menu(inv);
         Party party = new Party(inv);
+        Menu menu = new Menu(inv, party);
+        
 
         //Programs Goes through title screen and main menu items
         screen1.titleScreen(); //load title screen + opening credits
