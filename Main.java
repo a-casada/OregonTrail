@@ -57,6 +57,9 @@ public class Main {
             map.progressBar();
 
 
+
+
+
         
 
 
@@ -67,12 +70,14 @@ public class Main {
 
 
             // 10 miles travelled per day
-            if(inv.isWagonUsable())
+            if(inv.isWagonUsable() && !party.getGameOverStatus())
             {
                 map.setPosition(10);
             };
 
             System.out.println("[========================================================================]");
         }
+
+
     }
 }
