@@ -196,4 +196,9 @@ public class Date {
     public String toString(){
         return Integer.toString(date[0]) + "/" + Integer.toString(date[1]) + "/" + Integer.toString(date[2]);
     }
+
+    public void printDate()
+    {
+        System.out.println("The current data is " + date[1] + "/" + date[0] + "/" + date[2] + ".");
+    }
 }

@@ -2,7 +2,6 @@ public class Main {
 
     public static void main(String[] args) {
         //Program Loads objects
-        Menu screen1 = new Menu();
         Inventory inv = new Inventory();
         Shop shop = new Shop(inv, inv.getPlayerMoneyCount());
         Map map = new Map();
@@ -12,10 +11,10 @@ public class Main {
         
 
         //Programs Goes through title screen and main menu items
-        screen1.titleScreen(); //load title screen + opening credits
+        menu.titleScreen(); //load title screen + opening credits
         //load main menu
-        screen1.introAboutTrail(); // output history about trail
-        screen1.loadMainMenu();
+        menu.introAboutTrail(); // output history about trail
+        menu.loadMainMenu();
         // show top scores
         // options / management program
         //reset top 10 scores
@@ -24,9 +23,9 @@ public class Main {
         //Game Begins
         menu.setNames();
         // Short reminder about how the game works (distane, # of travelers, etc.)
-        screen1.startDate();    //Ask When they will set off (with blurb about how that effects the trail)
+        menu.startDate();    //Ask When they will set off (with blurb about how that effects the trail)
         //Ask for social rank / starting cash (poor, rich, president)
-        screen1.initialCash(inv.getPlayerMoneyCount()); //Display blurb about starting cash, what they could buy, and what they should buy.  (maybe add lore here based on class)
+        menu.initialCash(inv.getPlayerMoneyCount()); //Display blurb about starting cash, what they could buy, and what they should buy.  (maybe add lore here based on class)
         shop.buyItems();
         //Display graphic for "Beginning the journey"
         inv.isWagonUsable();
@@ -36,9 +35,9 @@ public class Main {
         //increment date
         //increment weather / terrain if needed
         //increment distance to oregon                      (DONE)
-        //increment distance to next location
-        //remove food
-        //update health
+        //increment distance to next location               (Done)
+        //remove food                                       (Done)
+        //update health                                      (Done)
         //roll for random event
         //complete random event if encountered
         //Offer options
@@ -56,9 +55,8 @@ public class Main {
         {
             map.progressBar();
 
-            //increment date by 1
-            date.setDate(1);
-
+            date.setDate(1); // date not working
+            date.printDate();
 
 
             // increment weather / terrian if needed
@@ -68,25 +66,13 @@ public class Main {
             date.setGrass(map.getClimate());
             party.dailyFoodUsed();
 
+            int temp = 1;
 
-            /*
+            do
+            {
+                temp = menu.playerDailyChoices();
 
-            PUT SOMETHING HERE IN ORDER TO GIVE THE PLAYER
-            CHOICES TO DO FOR EACH DAY
-            !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-            1. Continue on the trail
-            2. Check your supplies
-
-
-             */
-
-            // the player's daily choices in the game
-            menu.playerDailyChoices();
-
-
-
-
+            }while(temp == 2);
 
 
 

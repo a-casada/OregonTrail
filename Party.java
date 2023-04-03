@@ -147,7 +147,7 @@ public class Party
 
             int player = 0;
 
-            player = rand.nextInt(0, 5);
+            player = rand.nextInt(5);
 
             health[player] = health[player] - 20;
 
