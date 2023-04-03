@@ -8,6 +8,7 @@ public class Main {
         Map map = new Map();
         Date date = new Date();
         Menu menu = new Menu();
+        Party party = new Party();
         //Programs Goes through title screen and main menu items
         screen1.loadMainMenu(); //load title screen + opening credits
         //load main menu
@@ -49,7 +50,7 @@ public class Main {
         System.out.println(inv.getOxenCount());
         System.out.println(inv.getPlayerMoneyCount());
 
-        while((map.getPosition() <  250))
+        while((map.getPosition() <  250) && !party.getGameOverStatus())
         {
             map.progressBar();
 
@@ -71,5 +72,6 @@ public class Main {
 
             System.out.println("[========================================================================]");
         }
+        
     }
 }
