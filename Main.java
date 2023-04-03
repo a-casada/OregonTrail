@@ -8,6 +8,7 @@ public class Main {
         Date date = new Date();
         Party party = new Party(inv);
         Menu menu = new Menu(inv, party);
+        Event event = new Event(inv, party);
         
 
         //Programs Goes through title screen and main menu items
@@ -69,6 +70,7 @@ public class Main {
 
             // calculates the players food use
             party.dailyFoodUsed();
+            event.randomEvents();
 
             int temp = 1;
 

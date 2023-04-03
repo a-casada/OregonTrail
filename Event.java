@@ -4,99 +4,18 @@ public class Event
 {
     //comment
     //instance variables
-    // this information should be accessed through the inventory clas_____________________________________________________!!!!!!!!!!
-    private int playerMoneyCount = 1600;
-    private static int foodCount = 0;
-    private int clothingCount = 0;
-    private static int bulletsCount = 0;
-    private static int oxenCount = 0;
-    private int wagonWheelCount = 4;
-    private int wagonAxleCount = 2;
-    private int wagonTongueCount = 1;
-    private static int medicalSupplyCount = 0;
-    private boolean wagonUsable = false;
 
-    public int getPlayerMoneyCount() {
-        return playerMoneyCount;
+    private Inventory inv;
+    private Party party;
+
+    public Event(Inventory inv, Party party)
+    {
+        this.inv = inv;
+        this.party = party;
     }
 
-    public void setPlayerMoneyCount(int playerMoneyCount) {
-        this.playerMoneyCount = playerMoneyCount;
-    }
 
-    public int getFoodCount() {
-        return foodCount;
-    }
-
-    public void setFoodCount(int foodCount) {
-        this.foodCount = foodCount;
-    }
-
-    public int getClothingCount() {
-        return clothingCount;
-    }
-
-    public void setClothingCount(int clothingCount) {
-        this.clothingCount = clothingCount;
-    }
-
-    public int getBulletsCount() {
-        return bulletsCount;
-    }
-
-    public void setBulletsCount(int bulletsCount) {
-        this.bulletsCount = bulletsCount;
-    }
-
-    public int getOxenCount() {
-        return oxenCount;
-    }
-
-    public void setOxenCount(int oxenCount) {
-        this.oxenCount = oxenCount;
-    }
-
-    public int getWagonWheelCount() {
-        return wagonWheelCount;
-    }
-
-    public void setWagonWheelCount(int wagonWheelCount) {
-        this.wagonWheelCount = wagonWheelCount;
-    }
-
-    public int getWagonAxleCount() {
-        return wagonAxleCount;
-    }
-
-    public void setWagonAxleCount(int wagonAxleCount) {
-        this.wagonAxleCount = wagonAxleCount;
-    }
-
-    public int getWagonTongueCount() {
-        return wagonTongueCount;
-    }
-
-    public void setWagonTongueCount(int wagonTongueCount) {
-        this.wagonTongueCount = wagonTongueCount;
-    }
-
-    public int getMedicalSupplyCount() {
-        return medicalSupplyCount;
-    }
-
-    public void setMedicalSupplyCount(int medicalSupplyCount) {
-        this.medicalSupplyCount = medicalSupplyCount;
-    }
-
-    public boolean isWagonUsable() {
-        return wagonUsable;
-    }
-
-    public void setWagonUsable(boolean wagonUsable) {
-        this.wagonUsable = wagonUsable;
-    }
-
-    public static void main(String args[])
+    public void randomEvents()
     {
         // create a random integer generator from 0 to 99
         Random rand = new Random();
@@ -109,29 +28,56 @@ public class Event
         //berrybush
         if (rand_int1 ==  0 || rand_int1 == 1){
             System.out.println("You found a berry bush. Plus 20 pounds of food.");
-            foodCount = foodCount + 20;
-            System.out.println("Food Count: " + foodCount);
+            inv.setFoodCount(20);
+            System.out.println("Food Count: " + inv.getFoodCount());
         }
 
         //raiderAttacck
         if (rand_int1 ==  2 || rand_int1 == 3){
             System.out.println("You have been attacked by raiders. Minus 50 bullets.");
-            bulletsCount = bulletsCount + 20;
-            System.out.println("Food Count: " + bulletsCount);
+            inv.setBulletsCount(20);
+            System.out.println("Food Count: " + inv.getBulletsCount());
         }
 
         //Animal Attack
         if (rand_int1 ==  4){
-            System.out.println("Animal attack. Minus 2 medical supply.");
-            medicalSupplyCount = medicalSupplyCount - 2;
-            System.out.println("Medical supply count: " + medicalSupplyCount);
+            Random rand1 = new Random();
+            int player[] = new int [5];
+            int playerTemp = 0;
+            playerTemp = rand1.nextInt(5);
+
+            System.out.println("Animal attack. Minus 2 medical supplies.");
+            if(inv.getMedicalSupplyCount() > 2)
+            {
+                inv.setMedicalSupplyCount(-2);
+            }
+            else
+            {
+                player = party.getHealth();
+                player[playerTemp] = player[playerTemp] - 10;
+                party.setHealth(player);
+            }
+            System.out.println("Medical supply count: " + inv.getMedicalSupplyCount());
         }
 
         //Member Sickness
         if (rand_int1 ==  5 || rand_int1 == 6){
-            System.out.println("A member of your group has the flu. Minus 1 medical supply.");
-            medicalSupplyCount = medicalSupplyCount - 1;
-            System.out.println("Food Count: " + medicalSupplyCount);
+            Random rand2 = new Random();
+            int player1[] = new int [5];
+            int playerTemp1 = 0;
+            playerTemp1 = rand2.nextInt(5);
+            System.out.println("A member of your group has the flu. Minus 2 medical supplies.");
+            if(inv.getMedicalSupplyCount() > 2)
+            {
+                inv.setMedicalSupplyCount(-2);
+            }
+            else
+            {
+                player1 = party.getHealth();
+                player1[playerTemp1] = player1[playerTemp1] - 10;
+                party.setHealth(player1);
+            }
+            System.out.println("Medical supply count: " + inv.getMedicalSupplyCount());
         }
 
         //Meet Other Wagon
@@ -151,8 +97,8 @@ public class Event
         //Dead Ox
         if (rand_int1 ==  11){
             System.out.println("One of you Ox has died.");
-            oxenCount = oxenCount - 1;
-            System.out.println("Medical supply count: " + oxenCount);
+            inv.setOxenCount(-1);
+            System.out.println("Medical supply count: " + inv.getOxenCount());
         }
 
         //Injured member
@@ -167,9 +113,23 @@ public class Event
 
         //Snake Bite
         if (rand_int1 == 15){
-            System.out.println("A member of your part got bit by a snake. Minus 1 Medical Supply");
-            medicalSupplyCount = medicalSupplyCount - 1;
-            System.out.println("Food Count: " + medicalSupplyCount);
+            Random rand3 = new Random();
+            int player2[] = new int [5];
+            int playerTemp2 = 0;
+            playerTemp2 = rand3.nextInt(5);
+
+            System.out.println("A member of your family got bit by a snake. Minus 2 Medical Supply");
+            if(inv.getMedicalSupplyCount() > 2)
+            {
+                inv.setMedicalSupplyCount(-2);
+            }
+            else
+            {
+                player2 = party.getHealth();
+                player2[playerTemp2] = player2[playerTemp2] - 10;
+                party.setHealth(player2);
+            }
+            System.out.println("Medical supply count: " + inv.getMedicalSupplyCount());
         }
 
         //Wrong Trail; lose 4 days
