@@ -275,7 +275,7 @@ public class Menu {
                 "\n Wagon Wheel - For Repairs, Trades, or Sale" +
                 "\n Wagon Axle - For Repairs, Trades, or Sale" +
                 "\n Wagon Tongue -  For Repairs, Trades, or Sale" +
-                "\n Medical Supply Box - For healing the diseased and preventing death";
+                "\n Medical Supply Box - For healing the diseased and preventing death");
         System.out.println("[=========================================================================]");
         continu();
     }
