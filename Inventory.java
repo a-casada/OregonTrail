@@ -1,3 +1,14 @@
+/**
+ * Programming 2 Oregon Trail Project
+ * @author Alexander Casada
+ * @since March 28, 2023
+ *
+ * Description: This java Inventory class stores all the player's
+ * items along the Oregon Trail that they will buy or use. This class
+ * also can check to make sure the player's wagon will be able to
+ * move along the Oregon Trail.
+ */
+
 public class Inventory
 {
     private int playerMoneyCount = 1600;

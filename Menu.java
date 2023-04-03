@@ -151,12 +151,13 @@ public class Menu {
 
     public String[] setNames()
     {
-        String names[] = new String[4];
+        String names[] = new String[5];
+        names[0] = "Hattie";
         Scanner in = new Scanner(System.in);
-        System.out.println("What are the names of yourself (1), your three family members (2, 3), and your pet (4)?");
-        for(int i = 0; i <names.length; i++)
+        System.out.println("What are the names of your three family members (1, 2, 3) and your pet (4)?");
+        for(int i = 1; i <names.length; i++)
         {
-            System.out.print("(" + (i+1) + ")");
+            System.out.print("(" + (i) + ")");
             names[i] = in.nextLine();
         }
         System.out.println("[========================================================================]");
