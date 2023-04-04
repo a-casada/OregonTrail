@@ -1,6 +1,3 @@
-import java.util.Random;
-import java.util.Scanner;
-
 /**
  * ECCS: Programming 2 Oregon Trail Project
  * @author Alexander Casada
@@ -9,6 +6,8 @@ import java.util.Scanner;
  * Description: This java Party class stores all the names that are given to Hattie's 3 family members and
  * her pet, along with their current health, if they are dead of alive, and if they have won the game or not.
  */
+import java.util.Random;
+import java.util.Scanner;
 
 public class Party
 {
