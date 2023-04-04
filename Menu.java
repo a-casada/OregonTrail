@@ -1,71 +1,103 @@
 import java.util.Scanner;
 public class Menu {
+    //Variables
     private int pace;
     private int ration;
+    private Inventory inv;
+    private Party party;
 
     public Menu() {
         this.pace = 0;
         this.ration = 0;
     } // default
 
+    public Menu(Inventory inv, Party party)
+    {
+        this.inv = inv;
+        this.party = party;
+    }
+
+    /**Title Screen
+     * Sets title screen
+     */
+    public void titleScreen()
+    {
+        System.out.println("[========================================================================]");
+        System.out.println("░▀▀█▀▀░█░░░░█▀▀░░░▒█▀▀▀█░█▀▀▄░█▀▀░█▀▀▀░▄▀▀▄░█▀▀▄░░░▀▀█▀▀░█▀▀▄░█▀▀▄░▀█▀░█░░\n░░▒█░░░█▀▀█░█▀▀░░░▒█░░▒█░█▄▄▀░█▀▀░█░▀▄░█░░█░█░▒█░░░░▒█░░░█▄▄▀░█▄▄█░░█░░█░░\n░░▒█░░░▀░░▀░▀▀▀░░░▒█▄▄▄█░▀░▀▀░▀▀▀░▀▀▀▀░░▀▀░░▀░░▀░░░░▒█░░░▀░▀▀░▀░░▀░▀▀▀░▀▀▀\n By: A. Burkholder A. Casada, A. Guzman, and K. McClure ");
+        System.out.println("[========================================================================]");
+    }
+    /**Load Main Menu
+     * Sets the display for the main menu, does NOT receive inputs or give outputs.
+     *      1. Travel the trail
+     *      2. Learn about the trail
+     *      3. See the Oregon Top Ten
+     *      4. Choose Management Options
+     *      5. End
+     */
     public void loadMainMenu()
     {
         Scanner userIn = new Scanner(System.in); //Set up Scanner
         int userInput = 0;
         do {
-            System.out.println("Main Menu: Choose from the options below to continue. \n" +
-                    "     *      1. Travel the trail\n" +
-                    "     *      2. Learn about the trail\n" +
-                    "     *      3. Learn about Hattie Campbell\n" +
-                    "     *      4. See the Oregon Top Ten\n" +
-                    "     *      5. Visit the Graveyard\n" +
-                    "     *      6. Choose Management Options\n");
+            System.out.println("""
+                    Main Menu: Choose from the options below to continue.\s
+                         *      1. Travel the trail
+                         *      2. Learn about the trail
+                         *      3. Learn about Hattie Campbell
+                         *      4. See the Oregon Top Ten
+                         *      5. Visit the Graveyard
+                         *      6. Choose Management Options
+                    """);
             System.out.println("[========================================================================]");
             userInput = userIn.nextInt();
             switch (userInput) {
-                case 1: {
+                case 1 -> {
                     //Start the Oregon Trail
                 }
-                break;
-                case 2: {
+                case 2 -> {
                     learnAboutTrail();
                 }
-                break;
-                case 3: {
+                case 3 -> {
                     learnAboutHattie();
                 }
-                break;
-                case 4: {
+                case 4 -> {
                     System.out.println("Reference the soon-to-be-made top 10 class and retrieve the list of top 10 pioneers");
                     System.out.println("[========================================================================]");
+                    continu();
                 }
-                break;
-                case 5: {
+                case 5 -> {
                     System.out.println("Reference the gravestones list and tell the user where people died.");
                     System.out.println("[========================================================================]");
+                    continu();
                 }
-                break;
-                case 6: {
+                case 6 -> {
                     System.out.println("Provide options to the user");
                     System.out.println(" 1. Choose to reset the top 10 list to default");
                     System.out.println(" 2. Choose to reset the gravestones to default");
                     System.out.println(" 3. Change something aesthetic of the game.");
                     System.out.println(" 4. IDK what other options we want.");
                     System.out.println("[========================================================================]");
+                    continu();
                 }
-                break;
-                default: {
+                default -> {
                 }
-                break;
             }
         }while (userInput != 1);
     }
 
-    public void titleScreen()
+    /**
+     * Intro about trail
+     * Short intro before main menu.
+     */
+    public void introAboutTrail()
     {
+        System.out.println("About the Oregon Trail:" +
+                "\n The Oregon Trail was a legendary 2170 mile stretch of land from Independence, Missouri to Oregon City, Oregon." +
+                "\n This was no simple road trip for those who wanted to experience the west, and many people faced extreme hardships along the way." +
+                "\n\n Today you will be carving your own path on the trail, playing in the shoes of 13 year old Hattie Campbell." +
+                "\n Will you aid your family in making it to Oregon, or will you be one of the 20,000 individuals to lose their life on the trail?\n");
         System.out.println("[========================================================================]");
-        System.out.println("░▀▀█▀▀░█░░░░█▀▀░░░▒█▀▀▀█░█▀▀▄░█▀▀░█▀▀▀░▄▀▀▄░█▀▀▄░░░▀▀█▀▀░█▀▀▄░█▀▀▄░▀█▀░█░░\n░░▒█░░░█▀▀█░█▀▀░░░▒█░░▒█░█▄▄▀░█▀▀░█░▀▄░█░░█░█░▒█░░░░▒█░░░█▄▄▀░█▄▄█░░█░░█░░\n░░▒█░░░▀░░▀░▀▀▀░░░▒█▄▄▄█░▀░▀▀░▀▀▀░▀▀▀▀░░▀▀░░▀░░▀░░░░▒█░░░▀░▀▀░▀░░▀░▀▀▀░▀▀▀");
-        System.out.println("[========================================================================]");
+        continu();
     }
 
     /**
@@ -90,21 +122,6 @@ public class Menu {
     }
 
     /**
-     * Intro about trail
-     * Short intro before main menu.
-     */
-    public void introAboutTrail()
-    {
-        System.out.println("About the Oregon Trail:" +
-                "\n The Oregon Trail was a legendary 2170 mile stretch of land from Independence, Missouri to Oregon City, Oregon." +
-                "\n This was no simple road trip for those who wanted to experience the west, and many people faced extreme hardships along the way." +
-                "\n\n Today you will be carving your own path on the trail, playing in the shoes of 13 year old Hattie Campbell." +
-                "\n Will you aid your family in making it to Oregon, or will you be one of the 20,000 individuals to lose their life on the trail?\n");
-        System.out.println("[========================================================================]");
-        continu();
-    }
-
-    /**
      * Learn about Hattie
      * Displays a picture of Hattie Campbell.
      */
@@ -113,6 +130,30 @@ public class Menu {
         System.out.println("Hattie Campbell is a 13 year old pioneers, traveling with her family of 4 and pet.\n"+
                 "She is cool.");
         continu();
+    }
+
+    /** Player Daily Choices
+     * Blah Blah Blah
+     */
+    public int playerDailyChoices()
+    {
+        Scanner in = new Scanner(System.in);
+        int option = 1;
+        System.out.println("What would you like to do? \n1. Continue on the trail. \n2. Check your supplies.");
+        option = in.nextInt();
+        if(option == 2)
+        {
+            inv.getAllItems();
+        }
+        else if(option == 1)
+        {
+            System.out.println("You are continuing along the Oregon Trail.");
+        }
+        else
+        {
+            System.out.println("That is not an option, but your family chooses to continue on the trail.");
+        }
+        return option;
     }
 
     /**
@@ -141,8 +182,6 @@ public class Menu {
     {
 
     }
-
-
 
     /**
      * setStartDate
@@ -178,7 +217,7 @@ public class Menu {
 
         date[0] = 1;    //Set day
         date[1] = 4;    //Set initial month in case of error
-        date[2] = 1860; //Set Year
+        date[2] = 1843; //Set Year
         do {
             switch (input) {
                 case 1: {
@@ -225,25 +264,29 @@ public class Menu {
         }while (validInput = false); // Set Month */
 
         System.out.println("\nYour journey shall begin on " + date[1] + "-" + date[0] + "-" + date[2] + ".\n[=========================================================================]");
+        continu();
         return date;
     }
 
-    public String[] setNames()
+    /**
+     * Sets Names
+     * Sets the inital names for the game.
+     */
+    public void setNames()
     {
         String names[] = new String[5];
         names[0] = "Hattie";
         Scanner in = new Scanner(System.in);
-        System.out.println("What are the names of your three family members (1, 2, 3) and your pet (4)?");
+        System.out.println("What are the names of your family members (2, 3, 4) and your pet (5)?");
+        System.out.println("(1) Hattie Campbell");
         for(int i = 1; i <names.length; i++)
         {
-            System.out.print("(" + (i) + ")");
+            System.out.print("(" + (i+1) + ") ");
             names[i] = in.nextLine();
         }
         System.out.println("[========================================================================]");
-
-        return names;
+        party.setNames(names);
     }
-
     /**
      * initial Cash
      * Displays the "Here is your initial cash" Screen:
@@ -255,24 +298,27 @@ public class Menu {
     public void initialCash(int playerMoneyCount)
     {
         System.out.println("Every family has their own reason for leaving for Oregon, but our family is hoping to escape the overcrowding here in Louisiana.\nOur father, a banker, has stored us a healthy " + playerMoneyCount +  "$ for our trip... hopefully he spends it well.\nThe Clerk at the store told us to stock up on Oxen, Bullets, and medicine.\nWe were told only those with the speed of one hundred horses, the hunting spirit of Kit Carson, and plentiful medicine would make it to Oregon.\nHopefully his words hold true, but he wouldn't be the first to trying and swindle us out the last of our savings...");
-        System.out.println("\nIn the shop, you can buy: " +
-                "\n Food - Feeds party members, can be obtained at traders or through hunting " +
-                "\n Clothing - Protection from the weather" +
-                "\n Box of Bullets - For hunting and protection from bandits " +
-                "\n Oxen - Determines the speed of wagon (minimum: 4). Be wary of Oxen health. " +
-                "\n Wagon Wheel - For Repairs, Trades, or Sale" +
-                "\n Wagon Axle - For Repairs, Trades, or Sale" +
-                "\n Wagon Tongue -  For Repairs, Trades, or Sale" +
-                "\n Medical Supply Box - For healing the diseased and preventing death" + "\n   (Press 1 to continue to the shop)");
-
+        System.out.println("""	
+                You are about to visit the General Store, the cheapest shop along the oregon trail.	
+                In the shop, you can buy:\s	
+                	
+                1. Food - Feeds party members, can be obtained at traders or through hunting	
+                2. Clothing - Protection from the weather	
+                3. Box of Bullets - For hunting and protection from bandits	
+                4. Oxen - Determines the speed of wagon (minimum: 4). Be wary of Oxen health.\s	
+                5. Wagon Wheel - For Repairs, Trades, or Sale	
+                6. Wagon Axle - For Repairs, Trades, or Sale	
+                7. Wagon Tongue -  For Repairs, Trades, or Sale	
+                8. Medical Supply Box - For healing the diseased and preventing death	
+                  	
+                   (Press 0 to continue to the shop)""");
         Scanner in = new Scanner(System.in);    //Set up Scanner
-        int input = 0;                          //initialize input
+        int input = 2;                          //initialize input
         input =  in.nextInt();                  //gets next integer input as input.
         boolean validinput = false;             //sets up toggleable variable
-                do {
-                    validinput = input == 1;
-                }while(!validinput);
-        System.out.println("[=========================================================================]");
+        do {
+            validinput = input == 0;
+        }while(!validinput);
     }
 
     /**Continue Class
