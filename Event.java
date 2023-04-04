@@ -1,24 +1,34 @@
-//Event.java----by Aaron Guzman----4/1/2022
+/**
+ * ECCS: Programming 2 Oregon Trail Project
+ * @author Aaron Guzman
+ * @since April 1, 2023
+ *
+ * Description: This Event class will randomly generate random events throughout the game and update the player's items.
+ */
+
 import java.util.Random;
 public class Event
 {
-    //comment
-    //instance variables
-
-
+    //-------------variables
     private Inventory inv;
     private Party party;
 
 
+    /**
+     * Constructor for the Event class.
+     *
+     * @param inv The inventory object that stores the player's items.
+     * @param party The party of Hattie and her family/pet.
+     */
     public Event(Inventory inv, Party party)
     {
         this.inv = inv;
         this.party = party;
     }
 
-
-
-
+    /**
+     * This method generates random events and will then update the player's inventory/health depending on the event.
+     */
     public void randomEvents()
     {
         // create a random integer generator from 0 to 99
@@ -66,10 +76,9 @@ public class Event
 
         //Animal Attack
         if (rand_int1 ==  4){
-            Random rand1 = new Random();
             int player[] = new int [5];
             int playerTemp = 0;
-            playerTemp = rand1.nextInt(5);
+            playerTemp = rand.nextInt(5);
 
 
             System.out.println("Animal attack. Minus 2 medical supplies.");
@@ -89,10 +98,9 @@ public class Event
 
         //Member Sickness
         if (rand_int1 ==  5 || rand_int1 == 6){
-            Random rand2 = new Random();
             int player1[] = new int [5];
             int playerTemp1 = 0;
-            playerTemp1 = rand2.nextInt(5);
+            playerTemp1 = rand.nextInt(5);
             System.out.println("A member of your group has the flu. Minus 2 medical supplies.");
             if(inv.getMedicalSupplyCount() > 2)
             {
@@ -147,10 +155,9 @@ public class Event
 
         //Snake Bite
         if (rand_int1 == 15){
-            Random rand3 = new Random();
             int player2[] = new int [5];
             int playerTemp2 = 0;
-            playerTemp2 = rand3.nextInt(5);
+            playerTemp2 = rand.nextInt(5);
 
 
             System.out.println("A member of your family got bit by a snake. Minus 2 Medical Supply");

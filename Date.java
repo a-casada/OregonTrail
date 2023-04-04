@@ -1,5 +1,11 @@
-//Date.java-----by Alex Burkholder------3-28-2023
-//This class stores date data and does all daily calculations for weather and climate
+/**
+ * ECCS: Programming 2 Oregon Trail Project
+ * @author Alexnader Burkholder
+ * @since March 28, 2023
+ *
+ * Description: This class stores date data and does all daily calculations for weather and climate
+ */
+
 import java.util.Random;
 
 public class Date {
@@ -223,6 +229,9 @@ public class Date {
         return Integer.toString(date[0]) + "/" + Integer.toString(date[1]) + "/" + Integer.toString(date[2]);
     }
 
+    /**
+     * Prints the date with the current month, day, and year.
+     */
     public void printDate()
     {
         System.out.println("The current data is " + date[1] + "/" + date[0] + "/" + date[2] + ".");
