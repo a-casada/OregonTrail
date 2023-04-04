@@ -184,6 +184,7 @@ public class Event
         //Rough trail; lose a day
         if (rand_int1 == 17 || rand_int1 == 18){
             System.out.println("Rough Trail. Lose a day.");
+            date.
         }
 
 
@@ -196,7 +197,7 @@ public class Event
         //Broken Wheel
         if (rand_int1 ==  21 || rand_int1 == 22){
             System.out.println("You have a broken wheel. Minus 1 wheels.");
-            inv.setWagonWheelCount(1);
+            inv.setWagonWheelCount(-1);
             System.out.println("Wheel Count: " + inv.getWagonWheelCount());
         }
 
@@ -204,7 +205,7 @@ public class Event
         //Broken Axle
         if (rand_int1 ==  23 || rand_int1 == 24){
             System.out.println("You have a broken Axle. Minus 1 axle.");
-            inv.setWagonAxleCount(1);
+            inv.setWagonAxleCount(-1);
             System.out.println("Axle Count: " + inv.getWagonAxleCount());
         }
 
@@ -212,7 +213,7 @@ public class Event
         //Broken Tongue
         if (rand_int1 ==  25){
             System.out.println("You have a broken tongue. Minus 1 tongue.");
-            inv.setWagonTongueCount(1);
+            inv.setWagonTongueCount(-1);
             System.out.println("Tongue Count: " + inv.getWagonTongueCount());
         }
     }
