@@ -83,7 +83,7 @@ public class Event
             playerTemp = rand.nextInt(5);
 
 
-            System.out.println("Animal attack. Minus 2 medical supplies.");
+            System.out.println("Animal attack. Minus 2 medical supplies and if you do not have medical supplies -10 player health.");
             if(inv.getMedicalSupplyCount() > 2)
             {
                 inv.setMedicalSupplyCount(-2);
@@ -102,7 +102,7 @@ public class Event
             int player1[] = new int [5];
             int playerTemp1 = 0;
             playerTemp1 = rand.nextInt(5);
-            System.out.println("A member of your group has the flu. Minus 2 medical supplies.");
+            System.out.println("A member of your group has the flu. Minus 2 medical supplies and if you do not have medical supplies -10 player health.");
             if(inv.getMedicalSupplyCount() > 2)
             {
                 inv.setMedicalSupplyCount(-2);
@@ -131,7 +131,7 @@ public class Event
             playerTemp2 = rand.nextInt(5);
 
 
-            System.out.println("A member of your family got bit by a snake. Minus 2 Medical Supply");
+            System.out.println("A member of your family got bit by a snake. Minus 2 Medical Supplies and if you do not have medical supplies -10 player health");
             if(inv.getMedicalSupplyCount() > 2)
             {
                 inv.setMedicalSupplyCount(-2);
