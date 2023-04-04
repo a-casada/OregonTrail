@@ -12,6 +12,7 @@ public class Event
     //-------------variables
     private Inventory inv;
     private Party party;
+    private Date date;
 
 
     /**
@@ -24,6 +25,7 @@ public class Event
     {
         this.inv = inv;
         this.party = party;
+        this.date = date;
     }
 
     /**
@@ -95,7 +97,6 @@ public class Event
             System.out.println("Medical supply count: " + inv.getMedicalSupplyCount());
         }
 
-
         //Member Sickness
         if (rand_int1 ==  5 || rand_int1 == 6){
             int player1[] = new int [5];
@@ -115,41 +116,11 @@ public class Event
             System.out.println("Medical supply count: " + inv.getMedicalSupplyCount());
         }
 
-
-        //Meet Other Wagon
-        if (rand_int1 ==  7 || rand_int1 == 8){
-            System.out.println("You meet another Wagon. Would you like to request to trade?");
-        }
-
-
-        //Blizard; Only in mountains???
-        //Heavy Fog;
-        //HailStorm
-
-
-        //Injured Ox
-        if (rand_int1 ==  9 || rand_int1 == 10){
-            System.out.println("One of your Ox is injured.");
-        }
-
-
         //Dead Ox
         if (rand_int1 ==  11){
             System.out.println("One of you Ox has died.");
             inv.setOxenCount(-1);
-            System.out.println("Medical supply count: " + inv.getOxenCount());
-        }
-
-
-        //Injured member
-        if (rand_int1 == 12){
-            System.out.println("A member of your  party is injured.");
-        }
-
-
-        //Lost member; lose a day?
-        if (rand_int1 == 13 || rand_int1 == 14){
-            System.out.println("A member of your  party is lost.");
+            System.out.println("Oxen count: " + inv.getOxenCount());
         }
 
 
@@ -178,19 +149,21 @@ public class Event
         //Wrong Trail; lose 4 days
         if (rand_int1 == 16){
             System.out.println("You went down the wrong trail. Lose 4 days.");
+            date.setDate(4);
         }
 
 
         //Rough trail; lose a day
         if (rand_int1 == 17 || rand_int1 == 18){
             System.out.println("Rough Trail. Lose a day.");
-            date.
+            date.setDate(1);
         }
 
 
         //Impassible trail; lose a day
         if (rand_int1 == 19 || rand_int1 == 20){
             System.out.println("Impassible trail. Lose 3 days.");
+            date.setDate(3);
         }
 
 
