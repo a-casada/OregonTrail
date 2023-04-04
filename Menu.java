@@ -397,7 +397,7 @@ public class Menu {
     public void riverCrossing(Event event)
     {
         Random rand = new Random();
-        int rand_int1 = rand.nextInt(15);
+        int rand_int1 = rand.nextInt(10);
         int rand_int2 = rand.nextInt(50);
         boolean correctInput = false;
 
@@ -416,7 +416,11 @@ public class Menu {
             input =  in.nextInt();                  //gets next integer input as input.
             switch (input) {
                 case 1 -> {
-                    System.out.println("The river is " + rand_int1 + " feet deep and " + rand_int2 + " feet across.\nYou could pay 50$ to safely travel the river via ferry.\nHowever, if you wish to cross by foot, there is a chance\nto lose items in the heavy current.");
+                    System.out.println("" +
+                            "The river is " + rand_int1 + " feet deep and " + rand_int2 + " feet across." +
+                            "\nYou could pay 50$ to safely travel the river via ferry." +
+                            "\nHowever, if you wish to cross by foot, there is a chance" +
+                            "\nto lose items in the heavy current.");
                     correctInput = false;
                 }
                 case 2 -> {
