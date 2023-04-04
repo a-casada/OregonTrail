@@ -1,20 +1,21 @@
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
         //Program Loads objects
         Menu screen1 = new Menu();
         Inventory inv = new Inventory();
-        //Programs Goes through title screen and main menu items
-        screen1.loadMainMenu(); //load title screen + opening credits
-                                //load main menu
-        screen1.learnAboutTrail(); // output history about trail
-                                // show top scores
-                                // options / management program
-                                    //reset top 10 scores
-                                    //reset gravestones
-                                    //change aesthetics
+        //Programs Displays The Title Screen
+        screen1.titleScreen();      //load title screen + opening credits
+        screen1.introAboutTrail();  // Short blurb about the trail before main menu loads
+
+        //Main Menu
+        screen1.loadMainMenu();     //load main menu - completes all main menu actions that don't interfere with gameplay
+
         //Game Begins
-            // Short reminder about how the game works (distane, # of travelers, etc.)
+            // Short reminder about how the game works (2170 miles, # of travelers, etc.)
+            // Set names for people
         screen1.startDate();    //Ask When they will set off (with blurb about how that effects the trail)
                                 //Ask for social rank / starting cash (poor, rich, president)
         screen1.initialCash(inv.getPlayerMoneyCount()); //Display blurb about starting cash, what they could buy, and what they should buy.  (maybe add lore here based on class)
@@ -38,7 +39,7 @@ public class Main {
                 //change rations
                 //change speed
                 //
-
+        //Exit gameplay loop and return to main menu
 
     }
 }
