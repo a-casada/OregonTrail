@@ -42,6 +42,12 @@ public class Main {
         // The main loop of the Oregon Trail game. Only runs if the player is not yet at the first fort (250 miles away) and their game is not yet over.
         while((map.getPosition() <  250) && !party.getGameOverStatus())
         {
+            // 10 miles travelled per day only if the wagon is usable and the game is not yet over.
+            if(inv.isWagonUsable() && !party.getGameOverStatus())
+            {
+                map.setPosition(10);
+            }
+
             // Prints the progress percentage.
             map.progressBar();
 
@@ -74,12 +80,6 @@ public class Main {
 
             }while(temp == 2);
 
-
-            // 10 miles travelled per day only if the wagon is usable and the game is not yet over.
-            if(inv.isWagonUsable() && !party.getGameOverStatus())
-            {
-                map.setPosition(10);
-            };
 
             // Increment distance to next location.
             map.getDistToLM();

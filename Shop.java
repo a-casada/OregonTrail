@@ -80,7 +80,7 @@ public class Shop
 
             System.out.println("[========================================================================]");
 
-            // updates the amount of money the player has along with their inventory of items
+            // Updates the amount of money the player has along with their inventory of items.
             switch(item)
             {
                 case 1:
