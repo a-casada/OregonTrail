@@ -1,3 +1,12 @@
+/**
+ * Programming 2 Oregon Trail Project
+ * @author The Busy People
+ * @since March 28, 2023
+ *
+ * Description: The Main class organizes the pre-loop methods and also contains the main loop of the game which is interated
+ * after each day on the Oregon Trail.
+ */
+
 public class Main {
 
     public static void main(String[] args) {

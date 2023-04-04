@@ -1,5 +1,11 @@
-//Map.java-----by Alex Burkholder------3-30-2023
-//This class stores Map data and does all
+/**
+ * Programming 2 Oregon Trail Project
+ * @author Alex Burkholder
+ * @since March 30, 2023
+ *
+ * Description: The Map class stores all map data, including the distance from the start of the trail and all the various
+ * locations and their data.
+ */
 
 public class Map {
     //--------Variables
