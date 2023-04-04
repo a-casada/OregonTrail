@@ -70,7 +70,7 @@ public class Main {
             int temp = 1;
             do
             {
-                temp = menu.playerDailyChoices();
+                temp = menu.playerDailyChoices(map);
 
             }while(temp == 2);
 

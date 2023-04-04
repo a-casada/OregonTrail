@@ -206,7 +206,7 @@ public class Menu {
     /** Player Daily Choices
      * Blah Blah Blah
      */
-    public int playerDailyChoices()
+    public int playerDailyChoices(Map map)
     {
         Scanner in = new Scanner(System.in);
         int option = 1;
