@@ -16,7 +16,6 @@ public class Main {
         Party party = new Party(inv);
         Menu menu = new Menu(inv, party, map, shop);
         Event event = new Event(inv, party);
-        Date date = new Date(menu.startDate());
 
 
         //Programs Goes through title screen and main menu items.
@@ -30,6 +29,8 @@ public class Main {
 
         // Player is able to set Hattie's family members/pet names.
         menu.setNames();
+
+        Date date = new Date(menu.startDate());
 
         //Display blurb about starting cash, what they could buy, and what they should buy.  (maybe add lore here based on class)
         menu.initialCash(inv.getPlayerMoneyCount());
