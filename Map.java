@@ -38,12 +38,20 @@ public class Map {
         return currentClimateZone;
     }
 
-    /**getDistance2Landmark()
+    /**getDistToLM()
      * calculates distance from the next landmark based on current position.
      * @return Distance to the next landmark
      * */
     public int getDistToLM(){
         return distLMsToOrigin[lastLandmark + 1] - position;
+    }
+
+    /**getDistFromLM()
+     * calculates distance from the last landmark
+     * @return Distance from the last landmark
+     * */
+    public int getDistFromLM(){
+        return position - distLMsToOrigin[lastLandmark];
     }
 
     /**getPosition()
@@ -148,6 +156,9 @@ public class Map {
      * @return true if is a river
      * */
     public boolean isRiver() {
+        if (getDistFromLM() == 0){
         return isRiverAtLandmark[lastLandmark];
+        }
+        else return false;
     }
 }
