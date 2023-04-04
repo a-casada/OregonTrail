@@ -1,19 +1,30 @@
+/**
+ * Programming 2 Oregon Trail Project
+ * @author Keefer McClure
+ * @since March 28, 2023
+ *
+ * Description: The Menu class contains the text based Oregon Trail information and user inputs for all the different menu
+ * choices that the user can make in the Oregon Trail game.
+ */
+
 import java.util.Scanner;
+
+
 public class Menu {
     //Variables
-    private int pace;
-    private int ration;
     private Inventory inv;
     private Party party;
     private Map map;
     private Shop shop;
-    //Constructors
-    public Menu() {
-        this.pace = 0;
-        this.ration = 0;
-    } // default
 
-
+    /**
+     * Constructor for the Menu class.
+     *
+     * @param inv The inventor object for the program.
+     * @param party
+     * @param map
+     * @param shop
+     */
     public Menu(Inventory inv, Party party, Map map, Shop shop)
     {
         this.inv = inv;
@@ -370,16 +381,4 @@ public class Menu {
         }while(!validinput);
         System.out.println("[========================================================================]");
     }
-
-
-
-
-    /**
-     * Getters and setters
-     * @return int
-     */
-    public int getPace() {return pace;}
-    public void setPace(int pace) {this.pace = pace;}
-    public int getRation() {return ration;}
-    public void setRation(int ration) {this.ration = ration;}
 }

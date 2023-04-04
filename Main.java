@@ -87,8 +87,6 @@ public class Main {
             }while(temp == 2);
 
 
-
-
             // 10 miles travelled per day
             if(inv.isWagonUsable() && !party.getGameOverStatus())
             {
@@ -111,8 +109,5 @@ public class Main {
             System.out.println("YOU HAVE DIED AND DID NOT MAKE IT TO OREGON CITY!!!");
             System.out.println("[========================================================================]");
         }
-
-
-
     }
 }
