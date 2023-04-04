@@ -1,14 +1,23 @@
 import java.util.Scanner;
 public class Menu {
-   //Variables
+    //Variables
     private int pace;
     private int ration;
-
-    //Contructors
+    private Inventory inv;
+    private Party party;
+    //Constructors
     public Menu() {
         this.pace = 0;
         this.ration = 0;
     } // default
+
+
+    public Menu(Inventory inv, Party party)
+    {
+        this.inv = inv;
+        this.party = party;
+    }
+
 
     /**Title Screen
      * Sets title screen
@@ -19,7 +28,6 @@ public class Menu {
         System.out.println("░▀▀█▀▀░█░░░░█▀▀░░░▒█▀▀▀█░█▀▀▄░█▀▀░█▀▀▀░▄▀▀▄░█▀▀▄░░░▀▀█▀▀░█▀▀▄░█▀▀▄░▀█▀░█░░\n░░▒█░░░█▀▀█░█▀▀░░░▒█░░▒█░█▄▄▀░█▀▀░█░▀▄░█░░█░█░▒█░░░░▒█░░░█▄▄▀░█▄▄█░░█░░█░░\n░░▒█░░░▀░░▀░▀▀▀░░░▒█▄▄▄█░▀░▀▀░▀▀▀░▀▀▀▀░░▀▀░░▀░░▀░░░░▒█░░░▀░▀▀░▀░░▀░▀▀▀░▀▀▀\n By: A. Burkholder A. Casada, A. Guzman, and K. McClure ");
         System.out.println("[========================================================================]");
     }
-
     /**Load Main Menu
      * Sets the display for the main menu, does NOT receive inputs or give outputs.
      *      1. Travel the trail
@@ -34,14 +42,14 @@ public class Menu {
         int userInput = 0;
         do {
             System.out.println("""
-                    Main Menu: Choose from the options below to continue.\s
-                         *      1. Travel the trail
-                         *      2. Learn about the trail
-                         *      3. Learn about Hattie Campbell
-                         *      4. See the Oregon Top Ten
-                         *      5. Visit the Graveyard
-                         *      6. Choose Management Options
-                    """);
+                   Main Menu: Choose from the options below to continue.\s
+                        *      1. Travel the trail
+                        *      2. Learn about the trail
+                        *      3. Learn about Hattie Campbell
+                        *      4. See the Oregon Top Ten
+                        *      5. Visit the Graveyard
+                        *      6. Choose Management Options
+                   """);
             System.out.println("[========================================================================]");
             userInput = userIn.nextInt();
             switch (userInput) {
@@ -79,6 +87,7 @@ public class Menu {
         }while (userInput != 1);
     }
 
+
     /**
      * Intro about trail
      * Short intro before main menu.
@@ -86,36 +95,44 @@ public class Menu {
     public void introAboutTrail()
     {
         System.out.println("""
-                About the Oregon Trail:
-                 The Oregon Trail was a legendary 2170 mile stretch of land from Independence, Missouri to Oregon City, Oregon.
-                 This was no simple road trip for those who wanted to experience the west, and many people faced extreme hardships along the way.
+               About the Oregon Trail:
+                The Oregon Trail was a legendary 2170 mile stretch of land from Independence, Missouri to Oregon City, Oregon.
+                This was no simple road trip for those who wanted to experience the west, and many people faced extreme hardships along the way.
 
-                 Today you will be carving your own path on the trail, playing in the shoes of 13 year old Hattie Campbell.
-                 Will you aid your family in making it to Oregon, or will you be one of the 20,000 individuals to lose their life on the trail?
-                """);
+
+                Today you will be carving your own path on the trail, playing in the shoes of 13 year old Hattie Campbell.
+                Will you aid your family in making it to Oregon, or will you be one of the 20,000 individuals to lose their life on the trail?
+               """);
         System.out.println("[========================================================================]");
         continu();
     }
-    /**Learn about Trail
-     * Displays the "Learn about the trail" text in main menu.
+
+
+
+
+    /**
+     * Learn about Trail
+     * Displays the "Learn about the trail" text to inform the user about the trail.
      */
+
 
     public void learnAboutTrail()
     {
         System.out.println("""
-                About the Oregon Trail:
-                 The Oregon Trail was a legendary 2170 mile stretch of land from Independence, Missouri to Oregon City, Oregon.
-                 In the early 1800s, the trail was utilized by fur traders, only traveling the tail on horseback.
-                 By 1836, wagon trains from Independence, Missouri began clearing the trail to Oregon.\s
-                 As the years went on, roads, bridges, and ferries were built to speed up the journey.\s
-                 In the 1840's, the Organic Laws of Oregon promised free land to any settlers who chose to move to Oregon.
-                 The term "Manifest Destiny" was coined to describe the thousands of families who traveled the trails, inspired by that very promise.\s
-                 Many other families were inspired by the California Gold rush in 1948, inspired from the promise of riches.
-                 By the 1860's, many were traveling on ferries, with rivers and canals bring created to aid the pioneers.
-                 Finally, in 1869, the transcontinental railroad was completed, leading many to chose it over the trail.""");
+               About the Oregon Trail:
+                The Oregon Trail was a legendary 2170 mile stretch of land from Independence, Missouri to Oregon City, Oregon.
+                In the early 1800s, the trail was utilized by fur traders, only traveling the tail on horseback.
+                By 1836, wagon trains from Independence, Missouri began clearing the trail to Oregon.\s
+                As the years went on, roads, bridges, and ferries were built to speed up the journey.\s
+                In the 1840's, the Organic Laws of Oregon promised free land to any settlers who chose to move to Oregon.
+                The term "Manifest Destiny" was coined to describe the thousands of families who traveled the trails, inspired by that very promise.\s
+                Many other families were inspired by the California Gold rush in 1948, inspired from the promise of riches.
+                By the 1860's, many were traveling on ferries, with rivers and canals bring created to aid the pioneers.
+                Finally, in 1869, the transcontinental railroad was completed, leading many to chose it over the trail.""");
         System.out.println("[========================================================================]");
         continu();
     }
+
 
     /**
      * Learn about Hattie
@@ -128,6 +145,32 @@ public class Menu {
         continu();
     }
 
+
+    /** Player Daily Choices
+     * Blah Blah Blah
+     */
+    public int playerDailyChoices()
+    {
+        Scanner in = new Scanner(System.in);
+        int option = 1;
+        System.out.println("What would you like to do? \n1. Continue on the trail. \n2. Check your supplies.");
+        option = in.nextInt();
+        if(option == 2)
+        {
+            inv.getAllItems();
+        }
+        else if(option == 1)
+        {
+            System.out.println("You are continuing along the Oregon Trail.");
+        }
+        else
+        {
+            System.out.println("That is not an option, but your family chooses to continue on the trail.");
+        }
+        return option;
+    }
+
+
     /**
      * See Top Ten
      * Displays the top ten expeditions on the menu, both names and scores.
@@ -138,7 +181,9 @@ public class Menu {
     public void seeTopTen()
     {
 
+
     }
+
 
     /**
      * Choose Management Options
@@ -153,19 +198,18 @@ public class Menu {
     public void chooseManagementOptions()
     {
 
+
     }
+
+
+
+
+
 
     /**
      * setStartDate
      * Displays the date selection screen.
-     *      "Choose A Starting Month"
-     *      1. March
-     *      2. April
-     *      3. May
-     *      4. June
-     *      5. July
-     *      6. August
-     *      7. September
+     *    ex: "Choose A Starting Month:" then placing all months in a numbered list.
      * Asks user to choose a month to depart.
      * Asks the user if they are sure.
      * @return int[3] (the date: DAY, MONTH (int), YEAR)
@@ -174,92 +218,93 @@ public class Menu {
     {
         boolean validInput = false;
         int[] date = new int[3];
-        System.out.println("Choose A Starting Month (type number)\n" +
-                "1. March\n" +
-                "2. April\n" +
-                "3. May\n" +
-                "4. June\n" +
-                "5. July\n" +
-                "6. August\n" +
-                "7. September");
+        System.out.println("""
+               Choose A Starting Month (type number)
+               1. March
+               2. April
+               3. May
+               4. June
+               5. July
+               6. August
+               7. September""");
+
 
         Scanner in = new Scanner(System.in);    //Set up Scanner
         int input = 0;                          //initialize input
         input =  in.nextInt();            //gets next integer input as input.
+
 
         date[0] = 1;    //Set day
         date[1] = 4;    //Set initial month in case of error
         date[2] = 1843; //Set Year
         do {
             switch (input) {
-                case 1: {
-                   date[1] = 3;
+                case 1 -> {
+                    date[1] = 3;
                     validInput = true;
                 } // March
-                break;
-                case 2: {
+                case 2 -> {
                     date[1] = 4;
                     validInput = true;
                 } // April
-                break;
-                case 3: {
+                case 3 -> {
                     date[1] = 5;
                     validInput = true;
                 } // May
-                break;
-                case 4: {
+                case 4 -> {
                     date[1] = 6;
                     validInput = true;
                 } // June
-                break;
-                case 5: {
+                case 5 -> {
                     date[1] = 7;
                     validInput = true;
                 } // July
-                break;
-                case 6: {
+                case 6 -> {
                     date[1] = 8;
                     validInput = true;
                 } // August
-                break;
-                case 7: {
+                case 7 -> {
                     date[1] = 9;
                     validInput = true;
                 } // September
-                break;
-                default: {
+                default -> {
+
 
                     validInput = false;
                 }
-                break;
             }
         }while (validInput = false); // Set Month */
+
 
         System.out.println("\nYour journey shall begin on " + date[1] + "-" + date[0] + "-" + date[2] + ".\n[=========================================================================]");
         continu();
         return date;
     }
 
+
     /**
      * Sets Names
      * Sets the inital names for the game.
      */
-    public String[] setNames()
+    public void setNames()
     {
         String names[] = new String[5];
         names[0] = "Hattie";
         Scanner in = new Scanner(System.in);
-        System.out.println("What are the names of your three family members (1, 2, 3) and your pet (4)?");
+        System.out.println("What are the names of your family members (2, 3, 4) and your pet (5)?");
+        System.out.println("(1) Hattie Campbell");
         for(int i = 1; i <names.length; i++)
         {
-            System.out.print("(" + (i) + ")");
+            System.out.print("(" + (i+1) + ") ");
             names[i] = in.nextLine();
         }
+
+
         System.out.println("[========================================================================]");
 
-        return names;
-    }
 
+        party.setNames(names);
+    }
     /**
      * initial Cash
      * Displays the "Here is your initial cash" Screen:
@@ -271,18 +316,30 @@ public class Menu {
     public void initialCash(int playerMoneyCount)
     {
         System.out.println("Every family has their own reason for leaving for Oregon, but our family is hoping to escape the overcrowding here in Louisiana.\nOur father, a banker, has stored us a healthy " + playerMoneyCount +  "$ for our trip... hopefully he spends it well.\nThe Clerk at the store told us to stock up on Oxen, Bullets, and medicine.\nWe were told only those with the speed of one hundred horses, the hunting spirit of Kit Carson, and plentiful medicine would make it to Oregon.\nHopefully his words hold true, but he wouldn't be the first to trying and swindle us out the last of our savings...");
-        System.out.println("\nIn the shop, you can buy: " +
-                "\n Food - Feeds party members, can be obtained at traders or through hunting " +
-                "\n Clothing - Protection from the weather" +
-                "\n Box of Bullets - For hunting and protection from bandits " +
-                "\n Oxen - Determines the speed of wagon (minimum: 4). Be wary of Oxen health. " +
-                "\n Wagon Wheel - For Repairs, Trades, or Sale" +
-                "\n Wagon Axle - For Repairs, Trades, or Sale" +
-                "\n Wagon Tongue -  For Repairs, Trades, or Sale" +
-                "\n Medical Supply Box - For healing the diseased and preventing death");
+        System.out.println("""
+               You are about to visit the General Store, the cheapest shop along the oregon trail.   
+               In the shop, you can buy:\s   
+                 
+               1. Food - Feeds party members, can be obtained at traders or through hunting  
+               2. Clothing - Protection from the weather 
+               3. Box of Bullets - For hunting and protection from bandits   
+               4. Oxen - Determines the speed of wagon (minimum: 4). Be wary of Oxen health.\s   
+               5. Wagon Wheel - For Repairs, Trades, or Sale 
+               6. Wagon Axle - For Repairs, Trades, or Sale  
+               7. Wagon Tongue -  For Repairs, Trades, or Sale   
+               8. Medical Supply Box - For healing the diseased and preventing death 
+                 
+                  (Press 0 to continue to the shop)""");
+        Scanner in = new Scanner(System.in);    //Set up Scanner
+        int input = 2;                          //initialize input
+        input =  in.nextInt();                  //gets next integer input as input.
+        boolean validinput = false;             //sets up toggleable variable
+        do {
+            validinput = input == 0;
+        }while(!validinput);
         System.out.println("[=========================================================================]");
-        continu();
     }
+
 
     /**Continue Class
      * Adds: "submit "0" to continue"
@@ -300,6 +357,8 @@ public class Menu {
         }while(!validinput);
         System.out.println("[========================================================================]");
     }
+
+
 
 
     /**

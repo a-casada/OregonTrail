@@ -1,5 +1,16 @@
 import java.util.Scanner;
 
+/**
+ * Programming 2 Oregon Trail Project
+ * @author Alexander Casada
+ * @since March 28, 2023
+ *
+ * Description: This java Shop class allows the player of the
+ * Oregon Trail game to buy items for their journey on the Oregon
+ * Trail. This class also gets the users item type and amount in
+ * order to update the player's inventory.
+ */
+
 public class Shop
 {
     private int playerMoneyCount = 0;
@@ -12,24 +23,18 @@ public class Shop
     private int wagonTonguePurchased = 0;
     private int medicalSupplyPurchased = 0;
     private int moneyUsed = 0;
+    private Inventory inv;
 
     /**
-     * Default constructor for the Shop class.
-     */
-    public Shop()
-    {
-
-    }
-
-    /**
-     * This constructor sets the player's amount of money.
+     * Constructor for the Shop class.
      *
-     * @param playerMoneyCount
+     * @param inv Inventory object used to update the player's inventory.
+     * @param playerMoneyCount The amount of money the player has.
      */
-    public Shop(int playerMoneyCount)
+    public Shop(Inventory inv, int playerMoneyCount)
     {
+        this.inv = inv;
         this.playerMoneyCount = playerMoneyCount;
-        buyItems();
     }
 
     /**
@@ -47,21 +52,35 @@ public class Shop
         final int WAGONPARTPRICE = 10;
         final int MEDICALSUPPLYPRICE = 2;
 
+        // items that can be bough from the shop
         int item = 0;
+
+        //number of an item that the player is buying
         int amount = 0;
 
         while(item != 9)
         {
-            System.out.println("You can buy: \n 1: Food ($1 for 5 pounds) \n 2: Set of Clothing ($10 for one set) \n 3: Box of Bullets ($2 per box, 20 bullets per box) \n 4: Oxen ($20 each) \n 5: Extra Wagon Wheel ($10 each) \n 6 Extra Wagon Axle ($10 each) \n 7 Extra Wagon Tongue ($10 each) \n 8 Medical Supply Box ($2 each) \n Type '9' to exit");
-            System.out.println("You have $" + playerMoneyCount);
+            // list of items that the player can buy from the Shop
+            System.out.println("You can buy: \n 1: Food ($1 for 5 pounds) \n 2: Set of Clothing ($10 for one set) " +
+                               "\n 3: Box of Bullets ($2 per box, 20 bullets per box) \n 4: Oxen ($20 each) \n 5: Extra " +
+                               "Wagon Wheel ($10 each) \n 6: Extra Wagon Axle ($10 each) \n 7: Extra Wagon Tongue ($10 each) " +
+                               "\n 8: Medical Supply Box ($2 each) \n Type '9' to exit");
+
+
+
+            System.out.println("You have $" + (playerMoneyCount - moneyUsed));
             System.out.print("What item would you like to buy? ");
             item = in.nextInt();
-            System.out.print("How many of this item do you want? ");
-            amount = in.nextInt();
+
+            if(item !=9)
+            {
+                System.out.print("How many of this item do you want? ");
+                amount = in.nextInt();
+            }
 
             System.out.println("[========================================================================]");
 
-
+            // updates the amount of money the player has along with their inventory of items
             switch(item)
             {
                 case 1:
@@ -141,26 +160,23 @@ public class Shop
      */
     public void resetItems()
     {
-        Inventory player = new Inventory();
-
         if (playerMoneyCount >= moneyUsed)
         {
-            player.setPlayerMoneyCount(playerMoneyCount - moneyUsed);
-            player.setFoodCount(foodPurchased * 5);
-            player.setClothingCount(clothingPurchased);
-            player.setBulletsCount(bulletsBoxPurchased * 20);
-            player.setOxenCount(oxenPurchased);
-            player.setWagonWheelCount(wagonWheelPurchased);
-            player.setWagonAxleCount(wagonAxlePurchased);
-            player.setWagonTongueCount(wagonTonguePurchased);
-            player.setMedicalSupplyCount(medicalSupplyPurchased);
+            inv.setPlayerMoneyCount(playerMoneyCount - moneyUsed);
+            inv.setFoodCount(foodPurchased * 5);
+            inv.setClothingCount(clothingPurchased);
+            inv.setBulletsCount(bulletsBoxPurchased * 20);
+            inv.setOxenCount(oxenPurchased);
+            inv.setWagonWheelCount(wagonWheelPurchased);
+            inv.setWagonAxleCount(wagonAxlePurchased);
+            inv.setWagonTongueCount(wagonTonguePurchased);
+            inv.setMedicalSupplyCount(medicalSupplyPurchased);
         }
         else
         {
-            player.setPlayerMoneyCount(playerMoneyCount);
+            inv.setPlayerMoneyCount(playerMoneyCount);
             System.out.println("You do not have enough money!");
             System.out.println("Get out of my shop!!!");
         }
-
     }
 }

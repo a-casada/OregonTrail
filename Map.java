@@ -3,10 +3,10 @@
 
 public class Map {
     //--------Variables
-    private String[] landmarks = {"Origin", "Landmark1", "Landmark2", "Landmark3"};
-    private int[] distLMsToOrigin = {0, 25, 50, 75};
-    private boolean[] isRiverAtLandmark = {false, false, true, true};
-    private int[] climates = {0, 1, 0, 0};
+    private String[] landmarks = {"Independence, Missouri", "Kansas River Crossing", "Big Blue River Crossing", "Fort Kearny", "Chimney Rock", "Fort Laramie", "Independence Rock", "South Pass", "Fort Bridger" , "Green River", "Soda Springs", "Fort Hall", "Snake River", "Blue Mountains", "The Dalles", "Oregon City"};
+    private int[] distLMsToOrigin = {0, 102, 200, 250, 490, 830, 950, 1055, 1170, 1240, 1320, 1420, 1700, 1880, 1930, 2000}; // distance from starting location in miles
+    private boolean[] isRiverAtLandmark = {false, true, true, false, false, false, false, false, false, false, true, false, false, true, false, false, false};
+    private int[] climates = {0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0};
     private int lastLandmark; // most recent index for gathering data from the arrays
     private int position; // in miles
     private int currentClimateZone;
@@ -89,7 +89,8 @@ public class Map {
     /**setPosition(int distanceTraveled)
      * Updates the current position by adding the distance traveled to the current position
      * */
-    public void setPosition(int distanceTraveled){
+    public void setPosition(int distanceTraveled)
+    {
         position = position + distanceTraveled;
     }
 
@@ -116,4 +117,13 @@ public class Map {
 
     }
 
+    public void progressBar()
+    {
+        System.out.println("Progress Percentage: " + ((((double)position) / 250.0) *100) + "%");
+    }
+
+    public void majorLocation()
+    {
+
+    }
 }

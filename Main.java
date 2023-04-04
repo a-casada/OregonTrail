@@ -1,45 +1,111 @@
-import java.util.Scanner;
-
 public class Main {
 
     public static void main(String[] args) {
         //Program Loads objects
-        Menu screen1 = new Menu();
         Inventory inv = new Inventory();
-        //Programs Displays The Title Screen
-        screen1.titleScreen();      //load title screen + opening credits
-        screen1.introAboutTrail();  // Short blurb about the trail before main menu loads
+        Shop shop = new Shop(inv, inv.getPlayerMoneyCount());
+        Map map = new Map();
+        Party party = new Party(inv);
+        Menu menu = new Menu(inv, party);
+        Event event = new Event(inv, party);
+        
 
-        //Main Menu
-        screen1.loadMainMenu();     //load main menu - completes all main menu actions that don't interfere with gameplay
-
+        //Programs Goes through title screen and main menu items
+        menu.titleScreen(); //load title screen + opening credits
+        //load main menu
+        menu.introAboutTrail(); // output history about trail
+        menu.loadMainMenu();
+        // show top scores
+        // options / management program
+        //reset top 10 scores
+        //reset gravestones
+        //change aesthetics
         //Game Begins
-            // Short reminder about how the game works (2170 miles, # of travelers, etc.)
-            // Set names for people
-        screen1.startDate();    //Ask When they will set off (with blurb about how that effects the trail)
-                                //Ask for social rank / starting cash (poor, rich, president)
-        screen1.initialCash(inv.getPlayerMoneyCount()); //Display blurb about starting cash, what they could buy, and what they should buy.  (maybe add lore here based on class)
-        inv.goToShop(); //Display starting shop
-            //Display graphic for "Beginning the journey"
+        menu.setNames();
+        // Short reminder about how the game works (distane, # of travelers, etc.)//Ask When they will set off (with blurb about how that effects the trail)
+        Date date = new Date(menu.startDate());
+        //Ask for social rank / starting cash (poor, rich, president)
+        menu.initialCash(inv.getPlayerMoneyCount()); //Display blurb about starting cash, what they could buy, and what they should buy.  (maybe add lore here based on class)
+        shop.buyItems();
+        //Display graphic for "Beginning the journey"
+        inv.isWagonUsable();
+
 
         //Game Loop
-            //note if gravestone was passed (display if so)
-            //increment date
-            //increment weather / terrain if needed
-            //increment distance to oregon
-            //increment distance to next location
-            //remove food
-            //update health
-            //roll for random event
-            //complete random event if encountered
-            //Offer options
-                //trail trade
-                //trail talk
-                //trail continue
-                //change rations
-                //change speed
-                //
+        //increment date
+        //increment weather / terrain if needed
+        //increment distance to oregon                      (DONE)
+        //increment distance to next location               (Done)
+        //remove food                                       (Done)
+        //update health                                      (Done)
+        //roll for random event
+        //complete random event if encountered
+        //Offer options
+        //trail trade
+        //trail talk
+        //trail continue
+        //change rations
+        //change speed
+        //
         //Exit gameplay loop and return to main menu
+
+
+
+        while((map.getPosition() <  250) && !party.getGameOverStatus())
+        {
+            map.progressBar();
+
+            date.setDate(1); // should increment the date, not working
+            date.printDate(); // prints out the current date
+
+            // prints out the players health
+            party.printAllPeoplesHealth();
+
+            // increment weather / terrian if needed
+            map.setClimateZone();
+            date.setWeather(map.getClimate());
+            date.setTemp(map.getClimate());
+            date.setGrass(map.getClimate());
+
+            // calculates the players food use
+            party.dailyFoodUsed();
+            event.randomEvents();
+
+            int temp = 1;
+
+            do
+            {
+                temp = menu.playerDailyChoices();
+
+            }while(temp == 2);
+
+
+
+
+            // 10 miles travelled per day
+            if(inv.isWagonUsable() && !party.getGameOverStatus())
+            {
+                map.setPosition(10);
+            };
+
+            // increment distance to next location
+            map.getDistToLM();
+
+            System.out.println("[========================================================================]");
+        }
+
+        if (map.getPosition() >= 250 && !party.getGameOverStatus())
+        {
+            System.out.println("YOU HAVE MADE IT TO THE FIRST FORT!!!");
+            System.out.println("[========================================================================]");
+        }
+        else
+        {
+            System.out.println("YOU HAVE DIED AND DID NOT MAKE IT TO OREGON CITY!!!");
+            System.out.println("[========================================================================]");
+        }
+
+
 
     }
 }
