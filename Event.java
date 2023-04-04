@@ -216,4 +216,39 @@ public class Event
             System.out.println("Tongue Count: " + inv.getWagonTongueCount());
         }
     }
+
+    /**public void riverCrossing(int option)
+     * Contains the functionality of options to cross the river
+     * @param option The index for finding which option was selected
+     * */
+    public void riverCrossing(int option, int rand1, int rand2){
+        if (option == 2){
+            inv.setPlayerMoneyCount(-50);
+            System.out.println("You have paid $50 to successfully cross the river!");
+        }
+        else if (option == 3){
+            Random rand = new Random();
+            if(rand.nextInt(10) > rand1 || rand.nextInt(50 )> rand2){
+                System.out.println("You have successfully crossed the river!");
+            }
+
+            else {
+                System.out.println("You have successfully crossed the river, but you lost: ");
+
+                if(inv.getClothingCount() > 0){
+                    int numClothesL = inv.getClothingCount() / 3;
+                    inv.setClothingCount(numClothesL);
+                    System.out.println(numClothesL + " clothes");
+                }
+                if(inv.getWagonWheelCount()>1){
+                    inv.setWagonWheelCount(-1);
+                    System.out.println("1 wheel");
+                }
+                if(inv.getWagonAxleCount()>1){
+                    inv.setWagonAxleCount(-1);
+                    System.out.println("1 axel");
+                }
+            }
+        }
+    }
 }
