@@ -8,33 +8,31 @@
  */
 
 public class Main {
-
     public static void main(String[] args) {
-        //Program Loads objects
+        //Program creates objects
         Inventory inv = new Inventory();
         Shop shop = new Shop(inv, inv.getPlayerMoneyCount());
         Map map = new Map();
         Party party = new Party(inv);
-        Menu menu = new Menu(inv, party);
+        Menu menu = new Menu(inv, party, map, shop);
         Event event = new Event(inv, party);
-        
-
-        //Programs Goes through title screen and main menu items
-        menu.titleScreen(); //load title screen + opening credits
-        //load main menu
-        menu.introAboutTrail(); // output history about trail
-        menu.loadMainMenu();
-        // show top scores
-        // options / management program
-        //reset top 10 scores
-        //reset gravestones
-        //change aesthetics
-        //Game Begins
-        menu.setNames();
-        // Short reminder about how the game works (distane, # of travelers, etc.)//Ask When they will set off (with blurb about how that effects the trail)
         Date date = new Date(menu.startDate());
-        //Ask for social rank / starting cash (poor, rich, president)
-        menu.initialCash(inv.getPlayerMoneyCount()); //Display blurb about starting cash, what they could buy, and what they should buy.  (maybe add lore here based on class)
+
+
+        //Programs Goes through title screen and main menu items.
+        menu.titleScreen();
+
+        //Outputs the history of the trail.
+        menu.introAboutTrail();
+
+        // Loads the menu of all choices the player has before the game.
+        menu.loadMainMenu();
+
+        // Player is able to set Hattie's family members/pet names.
+        menu.setNames();
+
+        //Display blurb about starting cash, what they could buy, and what they should buy.  (maybe add lore here based on class)
+        menu.initialCash(inv.getPlayerMoneyCount());
         shop.buyItems();
         //Display graphic for "Beginning the journey"
         inv.isWagonUsable();

@@ -5,6 +5,8 @@ public class Menu {
     private int ration;
     private Inventory inv;
     private Party party;
+    private Map map;
+    private Shop shop;
     //Constructors
     public Menu() {
         this.pace = 0;
@@ -12,10 +14,12 @@ public class Menu {
     } // default
 
 
-    public Menu(Inventory inv, Party party)
+    public Menu(Inventory inv, Party party, Map map, Shop shop)
     {
         this.inv = inv;
         this.party = party;
+        this.map = map;
+        this.shop = shop;
     }
 
 
@@ -154,14 +158,23 @@ public class Menu {
         Scanner in = new Scanner(System.in);
         int option = 1;
         System.out.println("What would you like to do? \n1. Continue on the trail. \n2. Check your supplies.");
+        if(map.isShop())
+        {
+            System.out.println("3. Go to the Shop.");
+        }
         option = in.nextInt();
         if(option == 2)
         {
+
             inv.getAllItems();
         }
         else if(option == 1)
         {
             System.out.println("You are continuing along the Oregon Trail.");
+        }
+        else if(option == 3 && map.isShop())
+        {
+            shop.buyItems();
         }
         else
         {
