@@ -38,48 +38,35 @@ public class Main {
         inv.isWagonUsable();
 
 
-        //Game Loop
-        //increment date
-        //increment weather / terrain if needed
-        //increment distance to oregon                      (DONE)
-        //increment distance to next location               (Done)
-        //remove food                                       (Done)
-        //update health                                      (Done)
-        //roll for random event
-        //complete random event if encountered
-        //Offer options
-        //trail trade
-        //trail talk
-        //trail continue
-        //change rations
-        //change speed
-        //
-        //Exit gameplay loop and return to main menu
-
-
-
+        // The main loop of the Oregon Trail game. Only runs if the player is not yet at the first fort (250 miles away) and their game is not yet over.
         while((map.getPosition() <  250) && !party.getGameOverStatus())
         {
+            // Prints the progress percentage.
             map.progressBar();
 
-            date.setDate(1); // should increment the date, not working
-            date.printDate(); // prints out the current date
+            // Increments the date for each loop.
+            date.setDate(1);
 
-            // prints out the players health
+            // Prints the current date out for the player to see.
+            date.printDate();
+
+            // Prints out the player's health.
             party.printAllPeoplesHealth();
 
-            // increment weather / terrian if needed
+            // Increment weather / terrian if needed.
             map.setClimateZone();
             date.setWeather(map.getClimate());
             date.setTemp(map.getClimate());
             date.setGrass(map.getClimate());
 
-            // calculates the players food use
+            // Calculates the players food use.
             party.dailyFoodUsed();
+
+            // Could generate a random number depending on the random number generated.
             event.randomEvents();
 
+            // Lists the daily choices for the player.
             int temp = 1;
-
             do
             {
                 temp = menu.playerDailyChoices();
@@ -87,13 +74,13 @@ public class Main {
             }while(temp == 2);
 
 
-            // 10 miles travelled per day
+            // 10 miles travelled per day only if the wagon is usable and the game is not yet over.
             if(inv.isWagonUsable() && !party.getGameOverStatus())
             {
                 map.setPosition(10);
             };
 
-            // increment distance to next location
+            // Increment distance to next location.
             map.getDistToLM();
 
             System.out.println("[========================================================================]");
