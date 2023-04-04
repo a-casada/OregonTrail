@@ -15,7 +15,6 @@ public class Main {
         Map map = new Map();
         Party party = new Party(inv);
         Menu menu = new Menu(inv, party, map, shop);
-        Event event = new Event(inv, party);
 
 
         //Programs Goes through title screen and main menu items.
@@ -31,6 +30,7 @@ public class Main {
         menu.setNames();
 
         Date date = new Date(menu.startDate());
+        Event event = new Event(inv, party, date);
 
         //Display blurb about starting cash, what they could buy, and what they should buy.  (maybe add lore here based on class)
         menu.initialCash(inv.getPlayerMoneyCount());

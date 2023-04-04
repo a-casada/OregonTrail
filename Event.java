@@ -21,7 +21,7 @@ public class Event
      * @param inv The inventory object that stores the player's items.
      * @param party The party of Hattie and her family/pet.
      */
-    public Event(Inventory inv, Party party)
+    public Event(Inventory inv, Party party, Date date)
     {
         this.inv = inv;
         this.party = party;
