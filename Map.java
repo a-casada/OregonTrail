@@ -142,4 +142,12 @@ public class Map {
         }
         else return false;
     }
+
+    /**isRiver()
+     * Gets if there is a river or not at the location
+     * @return true if is a river
+     * */
+    public boolean isRiver() {
+        return isRiverAtLandmark[lastLandmark];
+    }
 }
