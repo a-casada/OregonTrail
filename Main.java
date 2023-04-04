@@ -48,8 +48,6 @@ public class Main {
                 map.setPosition(10);
             }
 
-            //if river crossing
-
             // Prints the progress percentage.
             map.progressBar();
 
