@@ -86,7 +86,7 @@ public class Party
     /**
      * Sets the games current difficulty level.
      *
-     * @param currentDifficulty Can set the game to a Easy, Medium, Hard, or Hardcore difficulty level.
+     * @param currentDifficulty Can set the game to an Easy, Medium, Hard, or Hardcore difficulty level.
      */
     public void setDifficulty(String currentDifficulty)
     {
@@ -116,7 +116,7 @@ public class Party
     /**
      * Sets Hattie's family members current alive status and the alive status of the pet.
      *
-     * @param isAlive Is a alive status array containing Hattie at the first element, then her family, and finally her pet at the final element.
+     * @param isAlive Is na alive status array containing Hattie at the first element, then her family, and finally her pet at the final element.
      */
     public void setIsAliveStatus(boolean isAlive[])
     {
