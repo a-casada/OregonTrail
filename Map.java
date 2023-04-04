@@ -6,6 +6,7 @@ public class Map {
     private String[] landmarks = {"Independence, Missouri", "Kansas River Crossing", "Big Blue River Crossing", "Fort Kearny", "Chimney Rock", "Fort Laramie", "Independence Rock", "South Pass", "Fort Bridger" , "Green River", "Soda Springs", "Fort Hall", "Snake River", "Blue Mountains", "The Dalles", "Oregon City"};
     private int[] distLMsToOrigin = {0, 102, 200, 250, 490, 830, 950, 1055, 1170, 1240, 1320, 1420, 1700, 1880, 1930, 2000}; // distance from starting location in miles
     private boolean[] isRiverAtLandmark = {false, true, true, false, false, false, false, false, false, false, true, false, false, true, false, false, false};
+    private boolean[] isShopAtLandmark = {true, false, false, true, false, true, false, false, true, false, false, true, false, false, false, false};
     private int[] climates = {0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0};
     private int lastLandmark; // most recent index for gathering data from the arrays
     private int position; // in miles
@@ -63,7 +64,7 @@ public class Map {
      * */
     public String getLastLandmark(){
         String land;
-        if (getDistToLM() == 0){
+        if (getDistToLM() < 0){
             this.lastLandmark++;
             land = landmarks[lastLandmark];
             return land;
@@ -87,11 +88,16 @@ public class Map {
     }
 
     /**setPosition(int distanceTraveled)
-     * Updates the current position by adding the distance traveled to the current position
+     * Updates the current position by adding the distance traveled to the current position.
+     * Will stop progress
      * */
-    public void setPosition(int distanceTraveled)
-    {
+    public void setPosition(int distanceTraveled) {
+        if (position + distanceTraveled < distLMsToOrigin[lastLandmark + 1])
         position = position + distanceTraveled;
+        else {
+            position = distLMsToOrigin[lastLandmark+1];
+            lastLandmark++;
+        }
     }
 
     /**setRiver(int[] lastRain, int[] date)
@@ -117,13 +123,21 @@ public class Map {
 
     }
 
-    public void progressBar()
-    {
+    /**progressBar()
+     * Prints the position as a percent of the total journey to be traveled
+     * */
+    public void progressBar() {
         System.out.println("Progress Percentage: " + ((((double)position) / 250.0) *100) + "%");
     }
 
-    public void majorLocation()
-    {
-
+    /**isShop()
+     * Tells weather a shop is present or not
+     * @return true if at a landmark and there is a shop
+     * */
+    public boolean isShop() {
+        if (getDistToLM()==0 && isShopAtLandmark[lastLandmark]){
+            return true;
+        }
+        else return false;
     }
 }
