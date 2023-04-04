@@ -7,6 +7,7 @@
  * locations and their data.
  */
 
+
 public class Map {
     //--------Variables
     private String[] landmarks = {"Independence, Missouri", "Kansas River Crossing", "Big Blue River Crossing", "Fort Kearny", "Chimney Rock", "Fort Laramie", "Independence Rock", "South Pass", "Fort Bridger" , "Green River", "Soda Springs", "Fort Hall", "Snake River", "Blue Mountains", "The Dalles", "Oregon City"};
@@ -69,12 +70,6 @@ public class Map {
      * @return A string with the name of the last landmark
      * */
     public String getLastLandmark(){
-        String land;
-        if (getDistToLM() < 0){
-            this.lastLandmark++;
-            land = landmarks[lastLandmark];
-            return land;
-        }
         return landmarks[lastLandmark];
     }
 
@@ -103,6 +98,7 @@ public class Map {
         else {
             position = distLMsToOrigin[lastLandmark+1];
             lastLandmark++;
+            System.out.println(getLastLandmark());
         }
     }
 
