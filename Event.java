@@ -211,7 +211,7 @@ public class Event
 
                 if(inv.getClothingCount() > 0){
                     int numClothesL = inv.getClothingCount() / 3;
-                    inv.setClothingCount(numClothesL);
+                    inv.setClothingCount(-numClothesL);
                     System.out.println(numClothesL + " clothes");
                 }
                 if(inv.getWagonWheelCount()>1){
