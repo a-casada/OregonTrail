@@ -167,6 +167,9 @@ public class Party
 
     }
 
+    /**
+     * Prints out the health of Hattie and her family members/pet.
+     */
     public void printAllPeoplesHealth()
     {
         for(int i = 0; i < names.length; i++)

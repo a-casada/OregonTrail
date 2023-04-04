@@ -240,6 +240,9 @@ public class Inventory
         this.medicalSupplyCount = this.medicalSupplyCount + medicalSupplyCount;
     }
 
+    /**
+     * This method lists all the player's items that they currently have.
+     */
     public void getAllItems()
     {
         System.out.println("Your Items: \nPounds of Food = " + foodCount + "\nClothingSets = " + clothingCount + "\nNumber of Bullets = "
