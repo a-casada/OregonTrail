@@ -18,13 +18,12 @@ public class Menu {
     private Map map;
     private Shop shop;
 
-    /**
-     * Constructor for the Menu class.
+    /** Constructor for the Menu class.
      *
      * @param inv The inventor object for the program.
-     * @param party
-     * @param map
-     * @param shop
+     * @param party Party object for the game.
+     * @param map Map object for the game.
+     * @param shop Shop object for the game.
      */
     public Menu(Inventory inv, Party party, Map map, Shop shop)
     {
@@ -41,7 +40,11 @@ public class Menu {
     public void titleScreen()
     {
         System.out.println("[========================================================================]");
-        System.out.println("░▀▀█▀▀░█░░░░█▀▀░░░▒█▀▀▀█░█▀▀▄░█▀▀░█▀▀▀░▄▀▀▄░█▀▀▄░░░▀▀█▀▀░█▀▀▄░█▀▀▄░▀█▀░█░░\n░░▒█░░░█▀▀█░█▀▀░░░▒█░░▒█░█▄▄▀░█▀▀░█░▀▄░█░░█░█░▒█░░░░▒█░░░█▄▄▀░█▄▄█░░█░░█░░\n░░▒█░░░▀░░▀░▀▀▀░░░▒█▄▄▄█░▀░▀▀░▀▀▀░▀▀▀▀░░▀▀░░▀░░▀░░░░▒█░░░▀░▀▀░▀░░▀░▀▀▀░▀▀▀\n By: A. Burkholder, A. Casada, A. Guzman, and K. McClure ");
+        System.out.println("""
+                ░▀▀█▀▀░█░░░░█▀▀░░░▒█▀▀▀█░█▀▀▄░█▀▀░█▀▀▀░▄▀▀▄░█▀▀▄░░░▀▀█▀▀░█▀▀▄░█▀▀▄░▀█▀░█░░
+                ░░▒█░░░█▀▀█░█▀▀░░░▒█░░▒█░█▄▄▀░█▀▀░█░▀▄░█░░█░█░▒█░░░░▒█░░░█▄▄▀░█▄▄█░░█░░█░░
+                ░░▒█░░░▀░░▀░▀▀▀░░░▒█▄▄▄█░▀░▀▀░▀▀▀░▀▀▀▀░░▀▀░░▀░░▀░░░░▒█░░░▀░▀▀░▀░░▀░▀▀▀░▀▀▀
+                 By: A. Burkholder, A. Casada, A. Guzman, and K. McClure\s""");
         System.out.println("[========================================================================]");
     }
 
@@ -104,8 +107,7 @@ public class Menu {
         }while (userInput != 1);
     }
 
-    /**
-     * Intro about trail
+    /**Intro about trail
      * Short intro before main menu.
      */
     public void introAboutTrail()
@@ -122,8 +124,7 @@ public class Menu {
         continu();
     }
 
-    /**
-     * Learn about Trail
+    /**Learn about Trail
      * Displays the "Learn about the trail" text to inform the user about the trail.
      */
     public void learnAboutTrail()
@@ -173,8 +174,7 @@ public class Menu {
     }
 
 
-    /**
-     * Learn about Hattie
+    /**Learn about Hattie
      * Displays a picture of Hattie Campbell.
      */
     public void learnAboutHattie()
@@ -191,7 +191,7 @@ public class Menu {
                Over the past few months, Hattie's father, Charles Campbell, shares his passion for
                traveling the Oregon Trail, buying booklets about the journey and speaking of partaking
                in a part of America's "Manifest Destiny." However, Hattie's mother continues to share
-               her fears of the trail, warning of the death toll and tearing up when thinking about 
+               her fears of the trail, warning of the death toll and tearing up when thinking about
                how she will never see her sisters again.
              """);
         continu();
@@ -250,8 +250,7 @@ public class Menu {
         //tell them how to get a better score
     }
 
-    /**
-     * Choose Management Options
+    /**Choose Management Options
      */
     public void chooseManagementOptions()
     {
@@ -263,8 +262,7 @@ public class Menu {
         //     *      Return to the Main Menu.
     }
 
-    /**
-     * setStartDate
+    /**setStartDate
      * Displays the date selection screen.
      *    ex: "Choose A Starting Month:" then placing all months in a numbered list.
      * Asks user to choose a month to depart.
@@ -335,8 +333,7 @@ public class Menu {
         return date;
     }
 
-    /**
-     * Sets Names
+    /**Sets Names
      * Sets the inital names for the game.
      */
     public void setNames()
@@ -356,8 +353,7 @@ public class Menu {
         party.setNames(names);
     }
 
-    /**
-     * initial Cash
+    /**Initial Cash
      * Displays the "Here is your initial cash" Screen:
      *      Display in-depth motive for leaving oregon
      *      Display Spendable Cash
@@ -393,6 +389,7 @@ public class Menu {
 
     /**River Crossing menu
      * Determines river height and depth, then outputs menu for choices.
+     * @param event Passes object event into the code.
      */
     public void riverCrossing(Event event)
     {
