@@ -12,6 +12,7 @@ public class Event
     //-------------variables
     private Inventory inv;
     private Party party;
+    private Date date;
 
 
     /**
@@ -20,10 +21,11 @@ public class Event
      * @param inv The inventory object that stores the player's items.
      * @param party The party of Hattie and her family/pet.
      */
-    public Event(Inventory inv, Party party)
+    public Event(Inventory inv, Party party, Date date)
     {
         this.inv = inv;
         this.party = party;
+        this.date = date;
     }
 
     /**
@@ -36,11 +38,6 @@ public class Event
 
 
         int rand_int1 = rand.nextInt(100);
-
-
-        // Print random integers
-        //System.out.println("Random Integer: "+rand_int1);
-
 
         //berrybush
         if (rand_int1 ==  0 || rand_int1 == 1){
@@ -81,7 +78,7 @@ public class Event
             playerTemp = rand.nextInt(5);
 
 
-            System.out.println("Animal attack. Minus 2 medical supplies.");
+            System.out.println("Animal attack. Minus 2 medical supplies and if you don't have medical supplies -10 player health.");
             if(inv.getMedicalSupplyCount() > 2)
             {
                 inv.setMedicalSupplyCount(-2);
@@ -101,7 +98,7 @@ public class Event
             int player1[] = new int [5];
             int playerTemp1 = 0;
             playerTemp1 = rand.nextInt(5);
-            System.out.println("A member of your group has the flu. Minus 2 medical supplies.");
+            System.out.println("A member of your group has the flu. Minus 2 medical supplies and if you don't have medical supplies -10 player health.");
             if(inv.getMedicalSupplyCount() > 2)
             {
                 inv.setMedicalSupplyCount(-2);
@@ -115,41 +112,18 @@ public class Event
             System.out.println("Medical supply count: " + inv.getMedicalSupplyCount());
         }
 
-
-        //Meet Other Wagon
-        if (rand_int1 ==  7 || rand_int1 == 8){
-            System.out.println("You meet another Wagon. Would you like to request to trade?");
-        }
-
-
-        //Blizard; Only in mountains???
-        //Heavy Fog;
-        //HailStorm
-
-
-        //Injured Ox
-        if (rand_int1 ==  9 || rand_int1 == 10){
-            System.out.println("One of your Ox is injured.");
-        }
-
-
         //Dead Ox
         if (rand_int1 ==  11){
             System.out.println("One of you Ox has died.");
             inv.setOxenCount(-1);
-            System.out.println("Medical supply count: " + inv.getOxenCount());
-        }
-
-
-        //Injured member
-        if (rand_int1 == 12){
-            System.out.println("A member of your  party is injured.");
+            System.out.println("Number of Oxen: " + inv.getOxenCount());
         }
 
 
         //Lost member; lose a day?
         if (rand_int1 == 13 || rand_int1 == 14){
-            System.out.println("A member of your  party is lost.");
+            System.out.println("A member of your  party is lost lose a day.");
+            date.setDate(1);
         }
 
 
@@ -178,25 +152,28 @@ public class Event
         //Wrong Trail; lose 4 days
         if (rand_int1 == 16){
             System.out.println("You went down the wrong trail. Lose 4 days.");
+            date.setDate(4);
         }
 
 
         //Rough trail; lose a day
         if (rand_int1 == 17 || rand_int1 == 18){
             System.out.println("Rough Trail. Lose a day.");
+            date.setDate(1);
         }
 
 
         //Impassible trail; lose a day
         if (rand_int1 == 19 || rand_int1 == 20){
             System.out.println("Impassible trail. Lose 3 days.");
+            date.setDate(3);
         }
 
 
         //Broken Wheel
         if (rand_int1 ==  21 || rand_int1 == 22){
             System.out.println("You have a broken wheel. Minus 1 wheels.");
-            inv.setWagonWheelCount(1);
+            inv.setWagonWheelCount(-1);
             System.out.println("Wheel Count: " + inv.getWagonWheelCount());
         }
 
@@ -204,7 +181,7 @@ public class Event
         //Broken Axle
         if (rand_int1 ==  23 || rand_int1 == 24){
             System.out.println("You have a broken Axle. Minus 1 axle.");
-            inv.setWagonAxleCount(1);
+            inv.setWagonAxleCount(-1);
             System.out.println("Axle Count: " + inv.getWagonAxleCount());
         }
 
@@ -212,7 +189,7 @@ public class Event
         //Broken Tongue
         if (rand_int1 ==  25){
             System.out.println("You have a broken tongue. Minus 1 tongue.");
-            inv.setWagonTongueCount(1);
+            inv.setWagonTongueCount(-1);
             System.out.println("Tongue Count: " + inv.getWagonTongueCount());
         }
     }
