@@ -121,4 +121,9 @@ public class Map {
     {
         System.out.println("Progress Percentage: " + ((((double)position) / 250.0) *100) + "%");
     }
+
+    public void majorLocation()
+    {
+        
+    }
 }
