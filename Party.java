@@ -153,7 +153,7 @@ public class Party
 
             }while(!isAlive[player]);
 
-            health[player] = health[player] - 20;
+            health[player] = health[player] - 10;
 
             if(health[player] <= 0)
             {

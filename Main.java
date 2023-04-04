@@ -5,7 +5,6 @@ public class Main {
         Inventory inv = new Inventory();
         Shop shop = new Shop(inv, inv.getPlayerMoneyCount());
         Map map = new Map();
-        Date date = new Date();
         Party party = new Party(inv);
         Menu menu = new Menu(inv, party);
         Event event = new Event(inv, party);
@@ -23,8 +22,8 @@ public class Main {
         //change aesthetics
         //Game Begins
         menu.setNames();
-        // Short reminder about how the game works (distane, # of travelers, etc.)
-        menu.startDate();    //Ask When they will set off (with blurb about how that effects the trail)
+        // Short reminder about how the game works (distane, # of travelers, etc.)//Ask When they will set off (with blurb about how that effects the trail)
+        Date date = new Date(menu.startDate());
         //Ask for social rank / starting cash (poor, rich, president)
         menu.initialCash(inv.getPlayerMoneyCount()); //Display blurb about starting cash, what they could buy, and what they should buy.  (maybe add lore here based on class)
         shop.buyItems();
