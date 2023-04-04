@@ -48,6 +48,11 @@ public class Main {
                 map.setPosition(10);
             }
 
+            // If river crossing
+            if(map.isRiver()){
+                menu.riverCrossing(event);
+            }
+
             // Prints the progress percentage.
             map.progressBar();
 
