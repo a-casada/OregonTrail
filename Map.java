@@ -14,7 +14,7 @@ public class Map {
     private int[] distLMsToOrigin = {0, 102, 200, 250, 490, 830, 950, 1055, 1170, 1240, 1320, 1420, 1700, 1880, 1930, 2000}; // distance from starting location in miles
     private boolean[] isRiverAtLandmark = {false, true, true, false, false, false, false, false, false, false, true, false, false, true, false, false, false};
     private boolean[] isShopAtLandmark = {true, false, false, true, false, true, false, false, true, false, false, true, false, false, false, false};
-    private int[] climates = {0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0};
+    private int[] climates = {0, 0, 0, 1, 1, 2, 2, 3, 4, 4, 4, 5, 5, 5, 5, 5};
     private int lastLandmark; // most recent index for gathering data from the arrays
     private int position; // in miles
     private int currentClimateZone;
